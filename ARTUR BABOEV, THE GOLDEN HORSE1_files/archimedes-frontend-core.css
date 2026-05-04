@@ -1,0 +1,699 @@
+/* Core frontend CSS for Archimedes sites */
+/* ----------------------------------------- */
+
+
+@import url(/lib/jquery/1.3.2/plugins/star-rating/jquery.rating.css);
+@import url(/lib/archimedes/styles/archimedes-cookie-notification.css?v=1.1);
+	
+/* Generic
+----------------------------------------- */
+	
+body .jsSubmit {
+        display: none;
+}
+
+.box:after,
+.box .toolbar:after,
+.box .area:after {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+}
+        /* hacks for IE7 and under */
+        .box,
+        .box .toolbar,
+        .box .area {
+                zoom: 1;
+                display: block;
+        }
+
+.cms-clickable {
+    cursor: pointer;
+}
+
+.left {
+        float: left;
+}
+
+.right {
+        float: right;
+}
+
+.hidden {
+        display: none;
+}
+
+.invisible {
+        visibility: hidden;
+        text-indent: -9999px;
+        overflow: hidden;
+        height: 0;
+        width: 0;
+}
+
+.printonly {
+        display: none;
+}
+
+.clear {
+        clear: both;
+        overflow: hidden;
+        height: 1px; /* height and overflow required for IE Win even though it makes it impossible for .clear not to have an affect on vertical spacing */
+}
+
+.padded {
+    padding: 8px 0;
+}
+
+.slightly-padded {
+    padding: 4px 0;
+}
+
+.indent1em {
+    padding-left: 1em;
+}
+
+.indent2em {
+    padding-left: 2em;
+}
+
+.indent3em {
+    padding-left: 3em;
+}
+
+/* Clear all elements within an element */
+
+.clearwithin:after {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        line-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+}
+        .clearwithin {
+                /* hacks for IE7 and under */
+                /* hide these from other browsers for valid css */
+                zoom: 1;
+                display: block;
+        }
+        .clearwithin.hidden {
+                display: none;
+        }
+
+.padded20 {
+        padding: 20px;
+}
+
+.pr2 { padding-right: 2px; }
+.pr5 { padding-right: 5px; }
+.pr10 { padding-right: 10px; }
+.pr15 { padding-right: 15px; }
+.pr20 { padding-right: 20px; }
+.pr25 { padding-right: 25px; }
+.pr30 { padding-right: 30px; }
+.pr35 { padding-right: 35px; }
+.pr40 { padding-right: 40px; }
+.mt5 { margin-top: 5px; }
+.mt8 { margin-top: 8px; }
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
+.mt20 { margin-top: 20px; }
+.mt25 { margin-top: 25px; }
+.mr5 { margin-right: 5px; }
+.mr8 { margin-right: 8px; }
+.mr10 { margin-right: 10px; }
+.mr15 { margin-right: 15px; }
+.mr20 { margin-right: 20px; }
+.ml5 { margin-left: 5px; }
+.ml8 { margin-left: 8px; }
+.ml10 { margin-left: 10px; }
+.ml15 { margin-left: 15px; }
+.ml20 { margin-left: 20px; }
+.mb5 { margin-bottom: 5px; }
+.mb8 { margin-bottom: 8px; }
+.mb10 { margin-bottom: 10px; }
+.mb15 { margin-bottom: 15px; }
+.mb20 { margin-bottom: 20px; }
+.lh1 { line-height: 1.0em; }
+/* FIXED WIDTHS */
+.fw10 { width: 10px }
+.fw20 { width: 20px }
+.fw30 { width: 30px }
+.fw40 { width: 40px }
+.fw50 { width: 50px }
+.fw60 { width: 60px }
+.fw70 { width: 70px }
+.fw80 { width: 80px }
+.fw90 { width: 90px }
+.fw100 { width: 100px }
+.fw120 { width: 120px }
+.fw130 { width: 130px }
+.fw140 { width: 140px }
+.fw150 { width: 150px }
+.fw160 { width: 160px }
+.fw170 { width: 170px }
+.fw180 { width: 180px }
+.fw190 { width: 190px }
+.fw200 { width: 200px }
+.fw250 { width: 250px }
+.fw300 { width: 300px }
+.fw350 { width: 350px }
+.fw400 { width: 400px }
+.fw450 { width: 450px }
+.fw500 { width: 500px }
+.fw550 { width: 550px }
+.fw600 { width: 600px }
+.fw650 { width: 650px }
+.fw700 { width: 700px }
+.fw750 { width: 750px }
+.fw800 { width: 800px }
+.fw850 { width: 850px }
+
+.error_container {
+        border: 1px solid #FFE000;
+        background: #FFF9CB;
+        color: #DD9700;
+        font-weight: bold;
+        margin: 0 0 15px;
+        padding: 10px;
+}
+
+.no-margin, .m0 {
+    /* no margins! */
+    margin: 0;
+}
+
+.no-highlights, .no-highlight, .no-outline {
+    outline: none;
+}
+
+
+/* Regular buttons
+----------------------------------------- */
+
+	.button {
+		float: left;
+		clear: both;
+		display: inline;
+		height: 31px;
+		margin-top: 10px;
+		background: url(/lib/archimedes/images/button_right.png) right top no-repeat;
+	}
+		.button a {
+			float: left;
+			display: inline;
+			height: 26px;
+			padding: 5px 10px 0 25px;
+			margin-right: 15px;
+			background: url(/lib/archimedes/images/button_left.png) left top no-repeat;
+		}
+		.button a,
+		.button a:visited {
+			
+			text-decoration: none;
+		}
+
+	
+/* Built-in styles
+----------------------------------------- */
+	
+
+	
+    pre, pre.code {
+        font-family: monospace;
+        font-size: smaller;
+        border: 1px solid #ddd;
+        background: #fafafa;
+        margin: 2em 0;
+        padding: 18px;
+        line-height: normal;
+        overflow: auto;
+    }
+
+    blockquote {
+        /* in appearance is like pre.code but not monospaced and has  line-breaks */
+        border: 1px solid #ddd;
+        background: #fafafa;
+        margin: 2em 0;
+        padding: 18px;
+        line-height: normal;
+        overflow: auto;
+    }
+
+
+	
+/* Heading images
+----------------------------------------- */
+	
+	.heading-image {
+		display: block;
+	}
+	.heading-image img {
+		border: 0;
+	}
+	.heading-image-text {
+		text-indent: -9999px;
+		display: block;
+		overflow: hidden;
+		height: 0;
+	}
+	
+	
+/* Pagination
+----------------------------------------- */
+	
+	.page_stats {
+		padding: 10px 0 0;
+		margin: 0 0 10px ;
+		clear: both;
+	}
+	.page_stats .ps_item {
+		float: left;
+	}
+	.page_stats .disabled, .ps_item.disabled {
+		color: #757575;
+	}
+	.page_stats .ps_item.sep {
+		padding: 0 10px;
+	}
+	.page_stats .ps_links {
+		color: #757575;
+		float: right;
+		display: inline;
+	}
+	.page_stats .ps_pages, .page_stats .ps_pages_indented {
+		float: left;
+	}
+	.page_stats a.ps_previous {
+		background: url(/lib/archimedes/images/left_arrow.png) 0 6px no-repeat;
+		padding-left: 15px;
+		float: left;
+		display: inline;
+	}
+	.page_stats a.ps_next {
+		background: url(/lib/archimedes/images/right_arrow.png) right 6px no-repeat;
+		padding-right: 15px;
+		float: left;
+		display: inline;
+	}
+	.page_stats .ps_page_number {
+		display: block;
+		float: left;
+	}
+	.ps_select_menu {
+		float: left;
+		margin: 0 3px;
+	}
+	
+	
+/* Protected path login
+--------------------------------------- */
+		
+	#protected_path_login {
+		position: relative;
+		z-index: 99999;
+	    position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+	    overflow: auto;
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+	}
+    	.protected_path_background_image {
+    	    display: block;
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    		right: 0;
+    		bottom: 0;
+    		z-index: 2;
+    		background: #050505;
+            transition: transform 600ms cubic-bezier(.65,.06,.19,.96), opacity 1000ms ease-in-out;
+    	}
+        	#protected_path_login.protected_path_hide .protected_path_background_image {
+        		opacity: 0;
+        	}
+        	.protected_path_background_image img {
+        	    width: 100%;
+        	    height: 100%;
+        	    object-fit: cover;
+        	    object-position: center center;
+        	    opacity: 0.4;
+        	}
+    	#protected_path_login > .inner {
+            min-height: 100vh;
+            width: 100%;
+		    padding: 40px;
+            box-sizing: border-box;
+    	}
+    	#protected_path_login.protected_path_hide  {
+    	    
+    	}
+    	#protected_path_login:after {
+    	    content: '';
+    	    display: block;
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    		right: 0;
+    		z-index: 1;
+    		bottom: 0;
+    		background: #fff;
+            transition: transform 600ms cubic-bezier(.65,.06,.19,.96), opacity 1000ms ease-in-out;
+    	}
+        	#protected_path_login.protected_path_hide:after {
+        		opacity: 0;
+        	}
+    	#protected_path_login #protected_path_login_container {
+    	    position: relative;
+    	    z-index: 20;
+    	}
+        	#protected_path_login.protected_path_hide #protected_path_login_container  {
+        	    transition: transform 800ms cubic-bezier(.65,.06,.19,.96), opacity 400ms ease-in-out;
+        	    opacity: 0;
+        	    transform: translateY(200px);
+        	}
+	#protected_path_login .inner > div {
+		width: 300px;
+		border: 1px solid #ccc;
+		background: #f1f1f1;
+		padding: 20px;
+		margin: 0 auto;
+	}
+    #protected_path_login .error_container {
+        clear: both;
+    }
+    #protected_path_login h1 {
+        margin: 0 0 20px;
+        padding: 0;
+    }
+	#protected_path_login label {
+		display: block;
+		clear: both;
+		color: #444;
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	#protected_path_login #username,
+	#protected_path_login #password,
+	#protected_path_login .protected_path_field_row input[type="text"],
+	#protected_path_login .protected_path_field_row input[type="email"] {
+		padding: 5px;
+		border: 1px solid #ccc;
+		width: 278px;
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	#protected_path_login .protected_path_form_main_image {
+	    clear: both;
+	    margin: 0 0 20px;
+	}
+    	#protected_path_login .protected_path_form_main_image img {
+    	    display: block;
+    	}
+	#protected_path_login .protected_path_form_description {
+	    clear: both;
+	    margin: 0 0 20px;
+	}
+	#protected_path_login .privacy_policy_form_msg {
+	    clear: both;
+	    margin: 20px 0 0;
+	}
+	
+	/*#protected_path_login # {*/
+	/*    max-height: 1000px;*/
+	/*}*/
+    	#protected_path_login.protected_path_loading #protected_path_login_form {
+    	    opacity: 0;
+    	    overflow: hidden;
+    	    transition: max-height 600ms cubic-bezier(.65,.06,.19,.96), opacity 400ms ease-in-out;
+    	    max-height: 0;
+    	}
+    	#protected_path_login.protected_path_loading.protected_path_checking_status #protected_path_login_form {
+    	    transition: none;
+    	}
+    	#protected_path_login.protected_path_check_email #protected_path_login_form {
+    	    opacity: 0;
+    	    overflow: hidden;
+    	    max-height: 0;
+    	}
+	#protected_path_login_content {
+	    min-height: 70px;
+	    position: relative;
+	    clear: both;
+	}
+	#protected_path_login .protected_path_form_status {
+	    clear: both;
+        width: 100%;
+        box-sizing: border-box;
+        opacity: 0;
+	    overflow: hidden;
+	    transition: max-height 600ms cubic-bezier(.65,.06,.19,.96), opacity 400ms ease-in-out, visibility 0ms;
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	    pointer-events: none; 
+	    visibility: hidden;
+	}
+    	#protected_path_login .protected_path_form_status_inner {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #e1e1e1;
+            padding: 20px;
+            display: block;
+            text-align: center;
+    	}
+    	#protected_path_login.protected_path_loading .protected_path_form_status.protected_path_form_status_checking {
+    	    max-height: 100px;
+    	    opacity: 1;
+    	    visibility: visible;
+    	}
+    	#protected_path_login.protected_path_loading.protected_path_checking_status .protected_path_form_status.protected_path_form_status_checking {
+    	    transition: none;
+    	}
+    	#protected_path_login .protected_path_form_status .loader_simple {
+    	    display: inline-block;
+    	    vertical-align: middle;
+    	    margin: 0 15px 0 0;
+    	}
+    	#protected_path_login .protected_path_form_status .status_icon {
+    	    display: inline-block;
+    	    vertical-align: middle;
+    	    margin: 0 15px 0 0;
+    	    font-size: 26px;
+    	    color: #91ca57;
+            transition: transform 1000ms cubic-bezier(0,1.77,.6,.99);
+            transform: scale(0);
+    	}
+    	#protected_path_login .protected_path_form_status .status_message {
+    	    display: inline-block;
+    	    vertical-align: middle;
+    	}
+        	#protected_path_login .protected_path_form_status .status_message h4 {
+        	    margin: 0;
+        	}
+    	
+    	#protected_path_login .protected_path_form_status.protected_path_form_check_email {
+    	    position: absolute;
+    	    max-height: 0;
+    	}
+        	#protected_path_login.protected_path_check_email .protected_path_form_status.protected_path_form_check_email {
+        	    max-height: 150px;
+        	    opacity: 1;
+        	    visibility: visible;
+        	    position: static;
+        	}
+        	#protected_path_login.protected_path_check_email .protected_path_form_status.protected_path_form_check_email .status_icon {
+        	    transform: scale(1);
+        	    transition-delay: 300ms;
+        	}
+
+
+/* $.toWin() elements */
+
+.archimedes_towin {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    margin: -32px;
+    background: #fff;
+    -moz-box-shadow: 0 0 2em #666;
+    -webkit-box-shadow: 0 0 2em #666;
+    box-shadow: 0 0 2em #666;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+
+
+
+#dropbox {
+    /* front-end dropbox (drag and drop upload) functionality */
+    display: none;
+}
+
+
+
+/* generic forms - give your form element (or a surrounding div) a
+    class 'generic_form_objects'  */
+
+
+.generic_form_objects .row {
+    display: block;
+    width: auto;
+    margin: 1em 0;
+}
+
+.generic_form_objects .inner_row {
+    /* a row within a row */
+    display: block;
+    width: auto;
+    margin: 0.5em 0;
+}
+
+.generic_form_objects .indented {
+    /* a row within a row */
+    display: block;
+    width: auto;
+    margin: 0.5em 0;
+    padding: 0 0 0 1.5em;
+}
+
+.generic_form_objects div.f_container {
+    border: 1px solid #c3c3c3;
+    padding: 0 2px;
+    background-image: url(/lib/archimedes/images/f_bg.gif);
+    width: auto;
+}
+
+.generic_form_objects div.f_container.tiny {
+    width: 10%;
+    min-width: 25px;
+}
+
+.generic_form_objects div.f_container.small {
+    width: 25%;
+    min-width: 60px;
+}
+
+.generic_form_objects div.f_container.medium {
+    width: 50%;
+    min-width: 120px;
+}
+
+.generic_form_objects div.f_container select.f,
+.generic_form_objects div.f_container input.f,
+.generic_form_objects div.f_container textarea.f {
+    border: 0;
+    margin: 0;
+    width: 100% !important;
+    padding: 2px 0;
+    background: transparent;
+}
+
+.generic_form_objects select.f.inline, .generic_form_objects input.f.inline {
+    border: 1px solid #c3c3c3;
+    padding: 2px;
+    background-image: url(/lib/archimedes/images/f_bg.gif);
+    width: auto !important;
+    display: inline;
+}
+
+.generic_form_objects label.l {
+    display: inline;
+    float: none;
+    padding-right: 3px;
+}
+
+.generic_form_objects label.r {
+    display: inline;
+    float: none;
+    padding-left: 3px;
+}
+
+.generic_form_objects .f.inline.tiny {
+    width: 30px !important;
+}
+
+.generic_form_objects .f.inline.wrapped {
+    margin: 0 3px;
+    float: none;
+}
+
+.generic_form_objects .f_note, .generic_form_objects .fnote {
+    color: gray;
+}
+
+.generic_form_objects .f_note.tiny,
+.generic_form_objects .fnote.tiny {
+    width: 15%;
+}
+
+.generic_form_objects .f_note.small,
+.generic_form_objects .fnote.small {
+    width: 30%;
+}
+
+.generic_form_objects .f_note.medium,
+.generic_form_objects .fnote.medium {
+    width: 55%;
+}
+
+.generic_form_objects table th {
+    text-align: left;
+}
+
+.generic_form_objects .warning_panel {
+    margin: 6px 0;
+    padding: 6px 6px 6px 32px;
+    border: 1px solid #c90;
+    background: #ffd url(/lib/images/icons/fugue-icons-3.0/bonus/icons-24/exclamation.png) 2px 2px no-repeat;
+}
+
+
+/* rounded corners and drop shadows */
+/* see: http://www.schillmania.com/content/entries/2009/css3-and-the-future/ */
+
+.rounded {
+    border:3px solid #999;
+    padding:1em;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    -opera-border-radius:8px;
+    -khtml-border-radius:8px;
+    border-radius:8px;
+}
+
+.dropshadow {
+	/* a rather heavy drop-shadow. Not for the fainthearted */
+    box-shadow:rgba(0,0,0,0.3) 0px 0px 24px;
+    -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
+}
+
+.padding {padding: 8px;}
+.pad2 {padding: 2px;}
+.pad4 {padding: 4px;}
+.pad5 {padding: 5px;}
+.pad6 {padding: 6px;}
+.pad7 {padding: 7px;}
+.pad8 {padding: 8px;}
+.pad9 {padding: 9px;}
+.pad10 {padding: 10px;}
+.pad15 {padding: 15px;}
+.pad16 {padding: 16px;}
+.pad20 {padding: 20px;}
+.pad25 {padding: 25px;}
+.pad30 {padding: 30px;}
+.pad35 {padding: 35px;}
+.pad40 {padding: 40px;}
+.pad45 {padding: 45px;}

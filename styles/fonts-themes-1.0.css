@@ -1,0 +1,109 @@
+
+
+
+
+
+/*  ROBIN: THIS NEXT ITEM IS IN THE WRONG PLACE! - PLEASE MOVE TO AUI NAV.
+    A navigation item may now have a 'plain' attribute set which prevents
+    text-transform uppercase and normalises the letter-spacing. This may be
+    appropriate for some nav items.
+*/
+.aui-nav-plain {
+    text-transform: none;
+    line-height: 1.2em;
+    letter-spacing: 0;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+/* font family */
+
+html.aol-font-proximanova,
+html.aol-font-proximanova .aui-item,
+html.aol-font-proximanova .aui-heading-styles-default {
+    font-family: 'ProximaNova', Helvetica, Arial, sans-serif !important;
+}
+
+html.aol-font-brandon,
+html.aol-font-brandon .aui-item,
+html.aol-font-brandon .aui-heading-styles-default {
+    font-family: 'Brandon', Helvetica, Arial, sans-serif !important;
+}
+
+html.aol-font-helvetica,
+html.aol-font-helvetica .aui-item,
+html.aol-font-helvetica .aui-heading-styles-default {
+    font-family: Helvetica, Arial, sans-serif !important;
+    font-weight: 200;
+}
+
+html.aol-font-arial,
+html.aol-font-arial .aui-item,
+html.aol-font-arial .aui-heading-styles-default {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 200;
+}
+
+html.aol-font-georgia,
+html.aol-font-georgia .aui-item,
+html.aol-font-georgia .aui-heading-styles-default {
+    font-family: Georgia, serif !important;
+}
+
+html.aol-font-brandon,
+html.aol-font-brandon .aui-item,
+html.aol-font-brandon .aui-heading-styles-default {
+    font-family: 'BrandonText', Helvetica, Arial, sans-serif !important;
+}
+
+html.aol-font-robotoslab,
+html.aol-font-robotoslab .aui-item,
+html.aol-font-robotoslab .aui-heading-styles-default {
+    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif !important;
+}
+
+html.aol-font-quattrocento,
+html.aol-font-quattrocento .aui-item,
+html.aol-font-quattrocento .aui-heading-styles-default {
+    font-family: 'Quattrocento', Helvetica, Arial, sans-serif !important;
+}
+
+html.aol-font-gilda,
+html.aol-font-gilda .aui-item,
+html.aol-font-gilda .aui-heading-styles-default {
+    font-family: 'Gilda Display', Helvetica, Arial, sans-serif !important;
+}
+
+
+/* font size */
+html.aol-font_size-16, html.aol-font_size-16 .aui-item {
+    font-size: 16px !important;
+}
+html.aol-font_size-15, html.aol-font_size-15 .aui-item {
+    font-size: 15px !important;
+}
+html.aol-font_size-14, html.aol-font_size-14 .aui-item {
+    font-size: 14px !important;
+}
+html.aol-font_size-13, html.aol-font_size-13 .aui-item {
+    font-size: 13px !important;
+}
+html.aol-font_size-12, html.aol-font_size-12 .aui-item {
+    font-size: 12px !important;
+}
+
+
+
+/* Might want to change this based on selected font */
+.aui-nav-note {
+    color: #A1A1A1;
+    font-family: georgia;
+    font-size: 10px;
+    font-style: italic;
+    -webkit-font-smoothing: antialiased;
+}

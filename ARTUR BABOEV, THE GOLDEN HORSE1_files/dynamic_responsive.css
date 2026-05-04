@@ -1,0 +1,67 @@
+
+
+        /* ------------------------------------------------------------------------
+        ---------- General styles to make the site responsive friendly ------------
+        ------------------------------------------------------------------------ */
+
+        @import url(/lib/g/2.0/styles/responsive_enabler.css);
+
+
+        /* ------------------------------------------------------------------------
+        ---------- General styles for highest responsive size and under -----------
+        ------------------------------------------------------------------------ */
+
+        @import url(/lib/g/2.0/styles/responsive_base.css) screen and (max-width: 1250px);
+
+
+        /* ------------------------------------------------------------------------
+        --------------------------------- Size 4 ----------------------------------
+        ------------------------------------------------------------------------ */
+
+        @import url(/lib/g/2.0/styles/responsive_size4_only.css) screen and (min-width: 1023px) and (max-width: 1250px);
+
+        /* ------------------------------------------------------------------------
+        --------------------------------- Size 3 ----------------------------------
+        ------------------------------------------------------------------------ */
+
+        @import url(/lib/g/2.0/styles/responsive_size3_only.css) screen and (min-width: 768px) and (max-width: 1023px);
+        @import url(/lib/g/2.0/styles/responsive_size3.css) screen and (min-width: 768px) and (max-width: 1023px);
+        @import url(/lib/g/2.0/styles/responsive_purchase_format_options.css) screen and (max-width: 960px);
+        
+            @import url(/lib/g/2.0/styles/responsive_sub_nav.css) screen and (min-width: 768px);
+
+        /* ------------------------------------------------------------------------
+        --------------------------------- Size 2 ----------------------------------
+        ------------------------------------------------------------------------ */
+
+        @import url(/lib/g/2.0/styles/responsive_size2.css) screen and (max-width: 767px);
+        @import url(/lib/g/2.0/styles/responsive_size2_only.css) screen and (min-width: 460px) and (max-width: 767px);
+
+
+        /* ------------------------------------------------------------------------
+        --------------------------------- Size 1 ----------------------------------
+        ------------------------------------------------------------------------ */
+
+        @import url(/lib/g/2.0/styles/responsive_size1.css) screen and (max-width: 459px);
+
+
+        /* ------------------------------------------------------------------------
+        --------------------- Size iPhone SE or landscape view --------------------
+        ------------------------------------------------------------------------ */
+
+        @import url(/lib/g/2.0/styles/responsive_size_se.css) screen and (max-width: 900px) and (max-height: 414px);
+
+
+
+        /* ------------------------------------------------------------------------
+        -------- special style for viewroom thumbnail in visualisation tools ------
+        ------------------------------------------------------------------------ */
+
+        @import url(/lib/g/2.0/styles/responsive_viewroom.css);
+
+        /* Template responsive styles */
+        @import url(/lib/g/themes/mode/2.1/styles/responsive.css?c=27042050002209&g=d1d8b321a08beaaeb177945a13b442e8);
+
+/* Website custom responsive styles */
+    @import url(/styles/responsive.css?c=27042050002209&g=d1d8b321a08beaaeb177945a13b442e8);
+

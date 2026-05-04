@@ -1,0 +1,549 @@
+/**
+ * jQuery RoomView by Artlogic
+ *
+ * Copyright 2018, Artlogic Media Ltd, http://www.artlogic.net/
+ */
+ 
+ 
+/* ------------------------------------------------------------- */
+/* Create the room                                               */
+/* ------------------------------------------------------------- */
+
+.roomview-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1499;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+    pointer-events: none;
+    transform-origin: center bottom;
+    background: #222;
+}
+    .roomview-artwork-switched .roomview-background {
+        opacity: 1;
+    }
+
+/* Absolutely positioned to the original artwork on the page */
+.room-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1500;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+    pointer-events: none;
+    transform-origin: center bottom;
+}
+.room {
+    z-index: 1501;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    position: absolute;
+    width: 200vw !important;
+    height: 200vh !important;
+    top: 50%;
+    left: 50%;
+    margin-top: -100vh;
+    margin-left: -100vw;
+    
+    width: 100vw !important;
+    height: 100vh !important;
+    top: 0;
+    left: 0;
+    margin: 0;
+    
+    transition: transform 1000ms ease-out;
+}
+    /*
+    .room.animate {
+        transform: scale(1.12);
+        transition: none;
+    }
+    */
+
+.floor {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);  
+    background: #d2dad6;
+    height: 200px;
+    overflow: visible;
+    box-shadow: inset 0 15vh 25vh 0 rgba(29, 48, 49, 0.3);
+    background: linear-gradient(#8c8a8a, white);
+    z-index: 1501;
+    transform-origin: center top;
+}
+    /* Texture for floor -------------------- */
+    .floor::before {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 200%;
+        background: url(images/texture_concrete.jpg) repeat center top;
+        background-size: auto 420px; /* Adjust this size for new textures */
+        opacity: 0.45; /* Adjust this for new textures */
+        box-shadow: inset 0 12px 10px -6px rgba(0, 0, 0, 0.85);
+        transform: translateY(0) translateX(-50%) perspective(250px) rotateX(65deg); /* Adjust this for new textures/objects */ /* Adjust this for new textures/objects */
+        transform-origin: 50% 0;
+    }
+
+    /* Grain -------------------- */
+    .floor::after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: url(images/grain.png) repeat;
+        background-size: 200px;
+        opacity: 0.75;
+    }
+    
+    .floor.floor-type-wood::before {
+        background: url(images/wood1.jpg) repeat center top;
+        background-size: auto 600px;
+        opacity: 0.75;
+        box-shadow: inset 0 12px 10px -8px rgba(0, 0, 0, 0.45);
+        transform: translateY(0) translateX(-50%) perspective(250px) rotateX(65deg);
+        transform-origin: 50% 0;
+    }
+    .floor.floor-type-wood::after {
+        opacity: 0.4;
+    }
+    
+    .floor.floor-type-wood2::before {
+        background: url(images/wood2.jpg) repeat center top;
+        background-size: auto 375px;
+        opacity: 0.75;
+        box-shadow: inset 0 12px 10px -8px rgba(0, 0, 0, 0.45);
+        transform: translateY(0) translateX(-50%) perspective(250px) rotateX(65deg);
+        transform-origin: 50% 0;
+    }
+    .floor.floor-type-wood2::after {
+        opacity: 0.4;
+    }
+
+.wall {
+    position: absolute;
+    height: 220vh;
+    height: calc(100vh - 200px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: unset;
+    z-index: 1502;
+    background: #fff;
+}
+
+    .room-wrapper.visual-mode-photo .wall-texture,
+    .room-wrapper.visual-mode-photo .floor {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        background: none !important;
+    }
+    .room-wrapper.visual-mode-photo {
+
+    }
+
+
+    .wall .wall-texture {
+        content:'';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        transform-origin: center bottom;
+        height: 100%;
+        width: 100%;
+        background: url(images/texture_plaster.jpg) #dddddc repeat-x bottom;
+    }
+
+    .wall.wall-type-white .wall-texture {
+        background: url(images/texture_white_plaster.jpg) #F1F1F1 repeat-x bottom;
+    }
+    .wall.wall-type-grey .wall-texture {
+        background: url(images/texture_grey_plaster.jpg) #525252 repeat-x bottom;
+    }
+    .wall.wall-type-concrete  .wall-texture {
+        background: url(images/texture_concrete_wall.jpg) #dddddc repeat bottom;
+        background-size: 234px auto;
+    }
+    .wall.wall-type-brick .wall-texture {
+        background: url(images/whitebrick4.jpg) #dddddc repeat bottom;
+        background-size: 326px auto;
+    }
+
+/* ----------------------------------------------------------- */
+/* ARTWORK                                                     */
+/* ----------------------------------------------------------- */
+
+body.roomview-active img.roomview-image {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: none;
+    transition: none;
+}
+    /* Animations applied to artwork during scale */
+    body.roomview-active img.roomview-image.room-css-transitions {
+        -webkit-transition: transform 1000ms cubic-bezier(.65,.06,.19,.96);
+        transition: transform 1000ms cubic-bezier(.65,.06,.19,.96);
+    }
+    
+body.roomview-active .not-roomview-image {
+    opacity: 0 !important;
+}
+
+img.roomview-image-override {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+body.roomview-active .roomview-image-override {
+    visibility: visible;
+    opacity: 1.0;
+    transition-delay: 500ms;
+    /*filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.5)) drop-shadow(0 8px 30px rgba(0, 0, 0, 0.3)) drop-shadow(27px 40px 38px rgba(0, 0, 0, 0.2)) drop-shadow(5px 23px 7px rgba(0, 0, 0, 0.3));*/
+    box-shadow: none;
+    -webkit-transition: filter 500ms cubic-bezier(.65,.06,.19,.96);
+    transition: filter 500ms cubic-bezier(.65,.06,.19,.96);
+}
+
+/* Hidden artwork used for positioning */
+body.roomview-active img.placeholder-artwork {
+    position: absolute;
+    visibility: visible;
+    pointer-events: none;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1503;
+    -webkit-transition: box-shadow 0.4s;
+    transition: box-shadow 0.4s;
+    opacity: 0;
+    /* filter: grayscale(); */
+    max-width: none;
+    max-height: none;
+}
+
+/* Applied to the scaled artwork. pos:relative neccesary for z-index. Some nice drop shadows..to be improved. */
+.roomview-artwork-scaled {
+    position: relative;
+    z-index: 9999;
+}
+
+.room-wrapper img.placeholder-artwork {
+    max-height: none !important;
+    max-width: none !important;
+}
+
+/* Once the artwork has been transitioned into view, fade between the real artwork and the placeholder */
+
+.roomview-artwork-switched img.roomview-active-element {
+    opacity: 0 !important;
+}
+.roomview-artwork-switched .roomview-active img.placeholder-artwork {
+    opacity: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 30px rgba(0, 0, 0, 0.18), 27px 40px 38px rgba(125, 119, 119, 0.06), 5px 23px 7px rgba(142, 133, 133, 0.1);
+}
+/* Use drop shadow for png images */
+.roomview-artwork-switched .roomview-active img.placeholder-artwork[src*=".png"] {
+    box-shadow: none;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)) drop-shadow(0 8px 30px rgba(0, 0, 0, 0.18)) drop-shadow(27px 40px 38px rgba(125, 119, 119, 0.06)) drop-shadow(5px 23px 7px rgba(142, 133, 133, 0.1));
+}
+
+
+/* ----------------------------------------------------------- */
+/* OBJECT                                                     */
+/* ----------------------------------------------------------- */
+.roomview-object {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 5000;
+    background-size: contain;
+    transition: opacity 400ms ease-in-out;
+    opacity: 0;
+}
+    .roomview-object.furniture-type-photo_bg {
+        opacity: 1;
+    }
+    .roomview-object.roomview-object-hidden {
+        display: none;
+    }
+    .roomview-artwork-switched .roomview-object {
+        opacity: 1;
+    }
+    /*.roomview-object.furniture-type-chair {*/
+    /*    width: 293px;*/
+    /*    height: 259px;*/
+    /*    background: url(images/eames_white_chair.png) no-repeat;*/
+    /*    background-size: contain;*/
+    /*    transform: translate(-160%,50px);*/
+    /*}*/
+    .roomview-object.furniture-type-chair {
+        width: 468px;
+        height: 280px;
+        background-image: url(images/chair_white.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: translate(-135%,76px);
+    }
+    /*.roomview-object.furniture-type-chair2 {*/
+    /*    width: 293px;*/
+    /*    height: 259px;*/
+    /*    background: url(images/black_plastic_chair.png) no-repeat;*/
+    /*    background-size: contain;*/
+    /*    transform: translate(50%,79px);*/
+    /*}*/
+    .roomview-object.furniture-type-chair2 {
+        width: 468px;
+        height: 280px;
+        background-image: url(images/chair_black.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: translate(-135%,76px);
+    }
+    
+    .roomview-object.furniture-type-mobler_chair {
+        width: 379px;
+        height: 275px;
+        background-image: url(images/mobler_chair.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: translate(-135%,96px);
+    }
+    .roomview-object.furniture-type-madsens_chair {
+        width: 379px;
+        height: 275px;
+        background-image: url(images/madsens_chair.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: translate(-135%,96px);
+    }
+    .roomview-object.furniture-type-raffles_sofa {
+        width: 887px;
+        height: 291px;
+        background: url(images/raffles_sofa.png) no-repeat;
+        background-size: contain;
+        left: 50%;
+        transform: translate(-50%,81px);
+    }
+    .roomview-object.furniture-type-chesterfield_sofa {
+        width: 887px;
+        height: 291px;
+        background: url(images/chesterfield_sofa.png) no-repeat;
+        background-size: contain;
+        left: 50%;
+        transform: translate(-50%,81px);
+    }
+    
+    .roomview-object.furniture-type-leathersofa {
+        width: 679px;
+        height: 259px;
+        background: url(images/black_sofa.png) no-repeat;
+        background-size: contain;
+        left: 50%;
+        transform: translate(-50%,58px);
+    }
+    .roomview-object.furniture-type-measure {
+        width: 600px;
+        height: 600px;
+        background: url(images/measure4.png) bottom no-repeat;
+        background-size: contain;
+    }
+    .roomview-object.furniture-type-bench {
+        width: 919px;
+        /* width: 1102px; */
+        height: 227px;
+        background-image: url(images/bench.png);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        transform: translate(-50%, 135px);
+        transform: translate(-50%, 149px);
+    }
+    
+    
+            
+
+/* ----------------------------------------------------------- */
+/* Some styles applied when active       */
+/* ----------------------------------------------------------- */
+
+/* Prevent scroll ----------------- */
+body.roomview-active {
+    overflow: hidden;
+}
+body.roomview-active #header {
+    opacity:0;
+}
+
+/* ----------------------------------------------------------- */
+/* Close button                                                */
+/* ----------------------------------------------------------- */
+
+.roomview-close {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 99999;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+    text-indent: -9999px;
+}
+    .roomview-close a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .roomview-close::after {
+        display: block;
+        content: "\e034";
+        text-indent: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right;
+        font-family: "artlogic-social-icons" !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-transform: none !important;
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #555;
+    }
+    body.roomview-active .roomview-close {
+        display: block;
+    }
+
+
+/* ----------------------------------------------------------- */
+/* Some overrides to existing #image_gallery styles            */
+/* ----------------------------------------------------------- */
+body.roomview-active .store_item_add_to_cart {
+    background: transparent;
+}
+body.roomview-active .parallax-mirror {
+   z-index: 9 !important;
+    opacity: 0 !important;
+}
+body.roomview-active #responsive_slide_nav_content_wrapper,
+body.roomview-active #popup_content #image_gallery #image_container .image {
+    overflow: visible !important;
+}
+body.roomview-active #popup_content {
+    overflow: hidden;
+}
+
+    /*
+body.roomview-active #image_gallery #image_container,
+body.roomview-active #image_gallery #content_module {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+body.roomview-active #image_container {
+    position:relative;
+}
+    body.roomview-active #image_gallery #image_container .image span img {
+        max-width: none;
+        max-height: none;
+    }
+    */
+body.roomview-active #image_gallery {
+    pointer-events: none;
+}
+body.roomview-active #image_gallery #content_module,
+body.roomview-active .heading_wrapper {
+    position: relative;
+    z-index: 9999;
+    opacity: 0 !important;
+    transition: opacity 400ms linear !important;
+}
+body.roomview-active #hero_header {
+    opacity: 0;
+}
+body.roomview-active #header {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: all 400ms cubic-bezier(.65,.06,.19,.96);
+}
+
+body.roomview-active #cms-frontend-toolbar {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* ----------------------------------------------------------- */
+/* Responsive styles                                           */
+/* ----------------------------------------------------------- */
+@media screen and (max-width: 1023px) {
+    
+    .roomview-object.furniture-type-chair,
+    .roomview-object.furniture-type-chair2 {
+        transform: translate(-90%, 76px);
+    }
+    
+    .roomview-object.furniture-type-mobler_chair {
+        transform: translate(-85%, 76px);
+    }
+    
+}
+
+@media screen and (max-width: 767px) {
+    
+    .roomview-object.furniture-type-bench {
+        transform: translate(-25%, 149px);
+    }
+    
+    .roomview-object.furniture-type-madsens_chair {
+        left: 72%;
+    }
+    
+}
+
+@media screen and (max-width: 459px) {
+    
+    .roomview-close {
+        right: 20px;
+    }
+    
+}

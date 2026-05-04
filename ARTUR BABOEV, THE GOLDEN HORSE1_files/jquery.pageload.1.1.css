@@ -1,0 +1,189 @@
+
+
+
+/* Page content transition
+----------------------------------------------------------- */
+
+body #container_inner {
+    transition: opacity 600ms ease-in-out;
+    -webkit-transition: opacity 600ms ease-in-out;
+    opacity: 1;
+}
+body.content-load-waiting #container_inner {
+    opacity: 0;
+    transition: none;
+    -webkit-transition: none;
+}
+body.page-transition #container_inner {
+    opacity: 0;
+}
+
+
+/* Splash screen and loader
+----------------------------------------------------------- */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+}
+    
+    body.browser-js-enabled #preloader {
+        display: block;
+    }
+    
+    .cms-toolbar-active #preloader {
+        top: 28px;
+    }
+    body.loader-active #preloader {
+        display: block;
+    }
+    body.first-load-complete.loader-active #preloader {
+        display: block !important;
+    }
+    body.first-load-complete #preloader {
+        bottom: auto;
+        height: auto;
+        display: none !important;
+    }
+    #preloader #preloader_mask {
+        /*display: none;*/
+        height:100%;
+        opacity:0;
+    }
+    #preloader #loader_logo {
+        opacity: 0;
+    }
+    body #preloader #loader {
+        height: 4px;
+        position: fixed;
+        left: 0;
+        width: 0;
+        background: #A8D3EF;
+        transition: width 800ms ease-in-out, height 500ms cubic-bezier(.87,.17,.18,.85);
+        -webkit-transition: width 800ms ease-in-out, height 500ms cubic-bezier(.87,.17,.18,.85);
+    }
+        body.first-load-complete #preloader #loader {
+            background: #A8D3EF;
+            top: 0;
+            transition: width 400ms ease-in-out;
+            -webkit-transition: width 400ms ease-in-out;
+        }
+        body.first-load-complete.cms-frontend-toolbar-active #preloader #loader {
+            top: 28px;
+        }
+
+    body.ajax-loading-complete #preloader {
+        opacity: 0;
+        transition: opacity 400ms ease-in-out;
+        -webkit-transition: opacity 400ms ease-in-out;
+    }
+    body.ajax-loading.ajax-initial-loading #preloader #loader {
+        width: 35%;
+        transition: width 2000ms ease-in-out;
+        -webkit-transition: width 2000ms ease-in-out;
+    }
+    body.first-load-complete #preloader #loader_wrapper {
+        display: block;
+    }
+
+
+    /* Splash screen
+    ----------------------------------------------------------- */
+
+        body.splash-loader-active #preloader.loading-start {
+            display: block;
+        }
+            body.splash-loader-active #preloader #preloader_mask {
+                display: block;
+                background: #fff;
+                opacity: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 0;
+                z-index: 10050;
+                transition: opacity 500ms cubic-bezier(.87,.17,.18,.85);
+                -webkit-transition: opacity 500ms cubic-bezier(.87,.17,.18,.85);
+            }
+                body.splash-loader-active #preloader.loading-start #preloader_mask {
+                    height: 100%;
+                    opacity: 1;
+                }
+                body.splash-loader-active #preloader.splash-screen-out #preloader_mask,
+                body.splash-loader-active #preloader.splash-screen-out #loader_logo {
+                    opacity: 0 !important; /* this wasn't always so !important */
+                }
+
+            body.splash-loader-active #preloader.loading-start #loader_wrapper {
+                left: 30%;
+                right: 30%;
+                position: fixed;
+                top: 50%;
+                margin-top: 0;
+                z-index: 10100;
+                height: 4px;
+                background: rgba(0,0,0,0.08);
+                transition: opacity 500ms cubic-bezier(.87,.17,.18,.85);
+                -webkit-transition: opacity 500ms cubic-bezier(.87,.17,.18,.85);
+            }
+                body.splash-loader-active #preloader #loader {
+                    background: #A8D3EF;
+                    width: 5%;
+                    transition: width 3000ms ease-in-out;
+                    -webkit-transition: width 3000ms ease-in-out;
+                }
+                body.splash-loader-active #preloader.loading-start #loader {
+                    height: 4px;
+                    position: absolute;
+                    top: 0;
+                    width: 15%;
+                    z-index: 10100;
+                }
+                body.splash-loader-active #preloader.loading-start.loading-complete #loader {
+                    /* Speed up the bar when loading has completed */
+                    transition: width 400ms ease-in-out;
+                    -webkit-transition: width 400ms ease-in-out;
+                }
+                body.splash-loader-active #preloader.loading-start.loading-bar-end #loader {
+                    width: 100%;
+                }
+                body.splash-loader-active #preloader.loading-start.splash-screen-out #loader_wrapper {
+                    opacity: 0;
+                }
+
+            body.splash-loader-active #preloader #loader_logo,
+            #home_splash .content {
+                transition: opacity 250ms cubic-bezier(.87,.17,.18,.85);
+                -webkit-transition: opacity 250ms cubic-bezier(.87,.17,.18,.85);
+            }
+
+
+/* Popup box
+------------------------------------------- */
+
+.site-popup-fallback-forced-open #popup_overlay {
+    transition: none;
+}
+#popup_box .pagination_controls > div.pagination_controls_previous,
+#popup_box .pagination_controls > div.pagination_controls_next,
+#popup_box .close {
+    position: relative;
+}
+#popup_box .pagination_controls > div.pagination_controls_previous a,
+#popup_box .pagination_controls > div.pagination_controls_next a,
+#popup_box .close a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}

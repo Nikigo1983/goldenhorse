@@ -1,0 +1,81 @@
+/* Core frontend CSS for Accessibility */
+/* ----------------------------------------- */
+
+
+/* Unique style which gets used to test if this stylesheet exists
+----------------------------------------------------------- */
+
+.accessibility-stylesheet-exists-test {
+    font-family: 'accessibilitystylesheetexists'!important;
+    position: absolute !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap !important; /* added line */
+    display: block;
+}
+
+
+/* Focus outlines 
+----------------------------------------------------------- */
+
+* :focus {
+    outline: none;
+}
+body:not(.browser-js-enabled) * :focus,
+body.tabbing-detected * :focus,
+body.accessibility_outlines_enabled * :focus,
+body.form-tabbing-detected form * :focus,
+.tabbing-detected form * :focus {
+    outline: auto;
+    outline-style: solid; /*need to specify outline style to make it work for IE and edge*/
+}
+
+
+/* Visually hidden / screen reader only content
+----------------------------------------------------------- */
+
+.visually-hidden,
+body .screen-reader-only,
+body #container .screen-reader-only {
+    position: absolute !important;
+    height: 1px !important; 
+    width: 1px !important;
+    overflow: hidden !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap !important; /* added line */
+    display: block!important;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+
+/* Skip links
+----------------------------------------------------------- */
+
+/*--- Main content skip link ---*/
+
+#skiplink-container .skiplink,
+.skiplink-container .skiplink {
+    position: fixed;
+    left: -9999px;
+    transform: none;
+    text-decoration: none;
+}
+    #skiplink-container .skiplink:focus,
+    .skiplink-container .skiplink:focus {
+        left: 20px;
+        top: 0;
+        transform: translateY(50%);
+        padding: 20px 15px;
+        background: #FFF !important;
+        color: #000 !important;
+        z-index: 999999999999;
+    }
+    .cms-frontend-toolbar-active #skiplink-container .skiplink:focus,
+    .cms-frontend-toolbar-active .skiplink-container .skiplink:focus {
+        top: 25px;
+    }

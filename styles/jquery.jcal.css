@@ -1,0 +1,157 @@
+/* jquery ical - a calendar picker plugin
+ * author: Peter Chater - Artlogic Media Ltd.
+ * version: 0.1.1 (May 25, 2013)
+ */
+
+
+div.jcal-obj {
+    width: 220px;
+    height: auto;
+    border: 1px solid #ccc;
+    background-color: #FFF;
+    padding: 9px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.aui-stickybox div.jcal-obj {
+    width: auto;
+    border-radius: inherit;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.aui-stickybox div.jcal-obj .jcal-footer-right {
+    text-align: right;
+}
+
+table.jcal-title-tbl {
+    width: 100%;
+    border: 0;
+    border-collapse: collapse;
+    margin-bottom: 3px;
+}
+
+table.jcal-title-tbl td.jcal-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+table.jcal-title-tbl td.jcal-title-right {
+    text-align: right;
+}
+
+table.jcal-footer-tbl {
+    width: 100%;
+    border: 0;
+    border-collapse: collapse;
+    margin-top: 6px;
+}
+
+table.jcal-footer-tbl td.jcal-footer-center {
+    text-align: center;
+}
+
+table.jcal-footer-tbl td.jcal-footer-right {
+    text-align: right;
+}
+
+td.jcal-footer-right .btn, td.jcal-footer-left .btn {
+    width: 34px;
+}
+
+table.jcal-tbl {
+    width: 100%;
+    border: 1px solid #efefef;
+    border-collapse: collapse;
+}
+
+table.jcal-tbl th, table.jcal-tbl td {
+    border: 1px solid #efefef;
+    padding: 1px 2px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+table.jcal-tbl th.jcal-disabled, table.jcal-tbl td.jcal-disabled {
+    color: #ddd;
+}
+
+table.jcal-tbl th.jcal-selected, table.jcal-tbl td.jcal-selected {
+    background: #ffc;
+}
+
+.jcal-float-centered {
+    position: absolute;
+    top: -30%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10000;
+}
+
+#jcal-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #efefef;
+    opacity: 0.6;
+    z-index: 9999;
+}
+
+.jcal-float-centered .jcal-obj {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.jcal-float-positioned {
+    position: absolute;
+}
+
+.jcal-obj .btn.jcal-btn-goto.goto-year {
+    font-size: 11px;
+}
+
+.aui-theme-dark div.jcal-obj {
+    background-color: #222;
+    border-color: #333;
+    color: #fff;
+}
+
+.aui-theme-dark .jcal-tbl thead {
+    background-color: #1a1a1a;
+    color: #aaa;
+}
+
+.aui-theme-dark table.jcal-tbl,
+.aui-theme-dark table.jcal-tbl th,
+.aui-theme-dark table.jcal-tbl td{
+    border-color: #1a1a1a;
+    font-weight: 200;
+}
+
+
+.aui-theme-dark table.jcal-tbl th.jcal-disabled,
+.aui-theme-dark table.jcal-tbl td.jcal-disabled {
+    color: #444;
+}
+
+.aui-theme-dark th.jcal-selected,
+.aui-theme-dark table.jcal-tbl td.jcal-selected {
+    background: #444;
+}

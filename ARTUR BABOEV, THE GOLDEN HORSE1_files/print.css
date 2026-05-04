@@ -1,0 +1,305 @@
+/* print layout css for gallery websites */
+
+html {
+    height: auto;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: 980px;
+    font-size: 16px;
+}
+
+body .printonly {
+    display: block;
+}
+.noprint {
+    display: none !important;
+}
+
+/* -----------------------------------------------------------
+       Generic
+    ----------------------------------------------------------- */
+
+        #content,
+        #content_module,
+        #sidebar,
+        .content_module,
+        .sidebar,
+        #main_content .heading_wrapper,
+        #sub_nav,
+        .records_list {
+            float: none !important;
+            width: 100% !important;
+            min-height: 0 !important;
+            min-width: 0 !important;
+            margin: 0 !important;
+            height: auto;
+        }
+
+        .records_list,
+        .records_list ul,
+        .image,
+        .content {
+            display: block !important;
+        }
+
+        #main_content .heading_wrapper,
+        #main_content h1,
+        #sub_nav,
+        #sidebar,
+        .sidebar,
+        #content_module,
+        .content_module,
+        #ig_slideshow_container {
+            margin: 0 0 20px !important;
+        }
+
+        .divider {
+            height: 40px !important;
+        }
+
+        /* 2 cols if there's a sidebar */
+        #sidebar + #content_module,
+        .sidebar + .content_module {
+            float: left !important;
+            width: 55% !important;
+        }
+        #sidebar,
+        .sidebar {
+            float: right  !important;
+            width: 40% !important;
+        }
+
+
+    /* -----------------------------------------------------------
+       General layout
+    ----------------------------------------------------------- */
+
+        #container {
+            width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        #main_content {
+            width: auto !important;
+            margin: 0 0 20px;
+            padding-top: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        #header {
+            z-index: 2000;
+            position: static;
+            padding-left: 0;
+            padding-right: 0;
+        }
+            #header .inner {
+                width: auto !important;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        #logo {
+            margin: 0 auto;
+            float: none;
+            width: 100%;
+            background: none;
+        }
+            #logo a {
+                margin: 0 auto;
+                float: none;
+                width: 100%;
+                display: block;
+                text-indent: 0;
+            }
+
+        #top_nav {
+            display: block;
+            float: none;
+            width: 100%;
+            clear: both;
+            position: static;
+            padding: 20px 0 0 !important;
+        }
+            #top_nav .topnav {
+                display: none;
+            }
+
+        .heading_wrapper #sub_nav.navigation,
+        #sub_nav.navigation,
+        .list_grid_control.navigation {
+            position: static;
+            clear: both;
+            width: 100%;
+        }
+            #sub_nav.navigation ul li,
+            .list_grid_control.navigation ul li {
+                margin: 0 15px 5px 0;
+            }
+            #sub_nav.navigation ul li a,
+            .list_grid_control.navigation ul li a {
+                background: none;
+                padding-top: 0;
+            }
+
+        #main_content #h1_wrapper,
+        #main_content #h1_wrapper h1,
+        #main_content .h1_wrapper,
+        #main_content .h1_wrapper h1,
+        #main_content h1 {
+            min-width: 0;
+            width: 100%;
+        }
+        #footer {
+            padding-left: 0;
+            padding-right: 0;
+            width: auto;
+            position: static;
+        }
+            #footer .inner {
+                width: auto !important;
+                padding: 0;
+            }
+
+
+    /* -----------------------------------------------------------
+        Global classes
+    ----------------------------------------------------------- */
+
+        #social_links,
+        .share_link {
+            display: none !important;
+        }
+
+        /* Image galleries
+        ----------------------------------------------------------- */
+
+        #ig_slideshow_container {
+            clear: both;
+            position: static !important;
+            width: 100% !important;
+        }
+            #ig_slideshow, #ig_slideshow div, #ig_slideshow span {
+                height: auto !important;
+                width: 100% !important;
+            }
+        #ig_slideshow_thumbnails_container {
+            display: none;
+        }
+
+        /* Images
+        ----------------------------------------------------------- */
+
+        .image {
+            height: auto !important;
+            max-width: none !important;
+            max-height: none !important;
+        }
+        .image span {
+            height: auto !important;
+            width: 100% !important;
+            max-width: none !important;
+            max-height: none !important;
+            display: block !important;
+        }
+        .image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+
+        /* Records lists (e.g. ALL lists on the site)
+        ----------------------------------------------------------- */
+
+        .records_list ul li.last {
+            margin-right: 20px !important;
+        }
+        /*
+        .records_list ul li a {
+            float: left;
+            width: 100%;
+        }
+        .records_list ul li .image {
+            margin-bottom: 15px;
+        }*/
+
+
+        /* Detail list
+        ----------------------------------------------------------- 
+
+        .detail_list ul li .image {
+            width: 35% !important;
+            float: left !important;
+            margin-bottom: 0;
+            height: auto !important;
+            text-align: left;
+        }
+        .detail_list ul li .image span {
+            height: auto !important;
+        }
+        .detail_list ul li .content {
+            width: 60% !important;
+            float: right !important;
+            text-align: left;
+        }*/
+
+        /* Pagination
+        ----------------------------------------------------------- */
+
+        .page_stats {
+            clear: both;
+            position: static !important;
+            padding: 20px 0 0 !important;
+        }
+
+
+        /* Hero
+        ----------------------------------------------------------- */
+
+        #hero_header,
+        .parallax-mirror {
+            display: none !important;
+        }
+        .layout-fixed-header #main_content,
+        body.layout-hero-header #container,
+        body.type-fullscreen #main_content {
+            padding-top: 0 !important;
+        }
+        #header.header_fixed,
+        body.type-fullscreen #header.header_fixed,
+        body.layout-hero-header.layout-fixed-header #header {
+            position: static !important;
+            margin-bottom: 40px !important;
+        }
+
+        .fullscreen_slideshow {
+            display: none !important;
+        }
+
+
+    /* -----------------------------------------------------------
+       Page Specific
+    ----------------------------------------------------------- */
+
+
+        /* Home
+        ----------------------------------------------------------- */
+
+        .section-home .records_list,
+        .section-home .records_list ul,
+        .section-home .records_list ul li,
+        .section-home .content {
+            margin-bottom: 0 !important;
+        }
+
+        /* Artists
+        ----------------------------------------------------------- */
+
+        .subsection-artist-detail-page  .subsection-overview  #sidebar {
+            display: none !important;
+        }
+
+

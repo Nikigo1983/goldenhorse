@@ -1,0 +1,63 @@
+/*
+    arimedes core jquery plugins
+    Copyright (c) 2009 Artlogic Media Limited
+*/
+
+
+
+/* jQuery .prompt CSS (see /<site>/records/jquery-plugins.js) */
+
+div.arpromptfade{
+      position: absolute;
+      background-color: #aaaaaa;
+}
+div.arprompt{
+      width: 400px;
+      position: absolute;
+      background-color: #ffffff;
+      text-align: left;
+      border: solid 1px #eeeeee;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      padding: 7px;
+}
+div.arprompt .arpromptcontainer{
+      font-weight: normal; /* was previously bold */
+}
+div.arprompt .arpromptclose{
+      position: absolute;
+      top: 4px; right: -2px;
+      width: 18px;
+      cursor: default;
+      color: #bbbbbb;
+      font-weight: bold;
+}
+div.arprompt .arpromptmessage{
+      padding: 10px;
+      line-height: 20px;
+      color: #222; /* previously #444444; */
+}
+div.arprompt .arpromptbuttons{
+      text-align: right;
+      padding: 5px 0 5px 0;
+      border: solid 1px #eeeeee;
+      background-color: #f4f4f4;
+}
+div.arprompt button{
+      padding: 3px 10px;
+      margin: 0 10px;
+      background-color: #999; /* previously #2F6073; */
+      border: solid 1px #f4f4f4;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 12px;
+}
+div.arprompt button:hover{
+      background-color: #b2b2b2; /* previously #728A8C; */
+}
+div.arprompt button.arpromptdefaultbutton{
+      background-color: #34b4e4; /* previously #BF5E26; */
+}
+.arpromptwarning .arprompt .arpromptbuttons{
+      background-color: #757575; /* previously #BF5E26; */
+}

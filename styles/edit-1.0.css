@@ -1,0 +1,426 @@
+.edit-screen .aol-menu-btn-left {
+    display: none;
+    padding-left: 0;
+}
+
+.es-contact-image-column {
+    text-align: right;
+}
+.es-contact-image-column img {
+    max-height: 300px;
+    width: auto;
+}
+.aol-edit-fieldgroup-screen .es-contact-image-column img {
+    max-width: 90%;
+}
+
+.aui-header-main-section-right img {
+    display: none !important;
+}
+
+.aol-image-controls-bar button {
+    margin-right: 20px;
+}
+
+.aol-uploader-footer {
+    display: none;
+}
+
+.aol-es-next-record-btn {
+    right: 0px;
+}
+.aol-es-prev-record-btn {
+    right: 50px;
+}
+.aol-page-docked .aol-es-next-record-btn {
+    right: 110px;
+}
+.aol-page-docked .aol-es-prev-record-btn {
+    right: 160px;
+}
+
+.aol-edit-screen-save-next-enabled.meta-key-pressed .es-save-close-button span {
+    display: none;
+}
+.aol-edit-screen-save-next-enabled.meta-key-pressed .es-save-close-button:before {
+    content: "Save & next";
+}
+.aol-edit-screen-save-next-enabled.aol-edit-screen-last-record-on-last-page.meta-key-pressed .es-save-close-button:before {
+    color: #ddd;
+}
+
+
+.edit-screen-wrapper.edit-content-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.aol-es-next-record-btn,
+.aol-es-prev-record-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+}
+
+.aol-es-next-month-btn,
+.aol-es-prev-month-btn {
+    margin: 10px;
+    font-size: 22px;
+    color: #666;
+    cursor: pointer;
+}
+
+.aol-es-next-record-btn[disabled],
+.aol-es-prev-record-btn[disabled] {
+    color: #ccc;
+}
+
+.edit-screen .aol-header-title {
+    margin-top: -1px;
+    max-width: 560px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.aui-header-main-section-left .aol-header-title {
+    display: none;
+    max-width: 750px;
+}
+.aol-edit-enable_edit_screen_header_thumbnail .aui-header-main-section-center .aol-header-title {
+    display: none;
+}
+.aol-edit-enable_edit_screen_header_thumbnail .aui-header-main-section-left .aol-header-title {
+    display: table-cell;
+}
+.aol-edit-enable_edit_screen_header_thumbnail .aol-logo-container,
+.aol-edit-enable_edit_screen_header_thumbnail .edit-screen-type {
+    display: none;
+}
+
+.aol-header-thumbnail-wrapper {
+    margin-right: 25px;
+}
+.aol-header-thumbnail {
+    width: 60px;
+}
+.xero_import_tax_map {
+    display: none;
+}
+/* temp - just until image issue resolved */
+/*.edit-screen .aol-es-next-record-btn,
+.edit-screen .aol-es-prev-record-btn {
+    display: none;
+}*/
+
+@media(max-width: 1080px) {
+    /*.edit-screen .aui-header-main-section-left {*/
+    /*    display: none;*/
+    /*}*/
+    .edit-screen .aol-logo-container {
+        display: none;
+    }
+    .edit-screen .aol-header-title {
+        max-width: 420px;
+        padding: 5px 0;
+    }
+    .aui-header-main-section-left .aol-header-title {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .aui-header-main-section-center .aol-header-title {
+        display: none !important;
+    }
+    .aol-logo-container {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+@media (max-width: 595px), (pointer:coarse) and (max-width: 940px) {
+    .edit-screen-type, .aui-header-main-section-center .offer-number-lozenge {
+        display: none;
+    }
+    .f-w-large {
+        width: 100%;    
+    }
+    .edit-screen .aui-head-content {
+        padding: 8px 0;
+    }
+    .edit-screen.aui-header-content-visible .aui-head-content {
+        padding: 5px 0;
+    }
+    .edit-screen .aui-header-main-section-center {
+        /*padding: 10px 0;*/
+        /*width: 100%;*/
+        /*float: left;*/
+    }
+    .aol-header-thumbnail {
+        width: 50px;
+    }
+    .aol-header-thumbnail-wrapper {
+        margin-right: 13px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .edit-screen.aol-edit-screen-has-sections .aui-header-main-section-center {
+        padding: 10px 56px;
+        display: none;
+    }
+    .edit-screen #aui-header-content-box.aui-active > * {
+        padding: 11px 0;
+    }
+    .edit-screen .aol-logo-container {
+        display: none;
+    }
+    .edit-screen .aui-header-main-section-right {
+        position: absolute;
+        height: 33px !important;
+        top: 4px;
+        right: 0;
+    }
+    .edit-screen .aol-header-title {
+         padding: 0;
+         text-align: center;
+         display: table-cell;
+         font-size: 15px;
+    }
+
+
+    .edit-screen .page_title {
+        max-width: 220px;
+        font-size: 15px;
+        display: inline-block;
+        margin-top: 6px;
+        /*margin-top: 12px;*/
+        /*display: block;*/
+    }
+
+    .edit-screen-master-record #aui-head .edit-screen .aol-header-title:before {
+        font-size: 10px;
+        vertical-align: top;
+        margin-top: 12px;
+        display: inline-block;
+    }
+    .edit-screen-master-record .page_title {
+        max-width: 200px;
+    }
+    .edit-screen.aui-heading-styles-default section.f-section h1 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .edit-screen.aui-heading-styles-default .f-section h2 {
+        font-size: 17px;
+        text-transform: none;
+        -webkit-font-smoothing: auto;
+    }
+
+    .edit-screen.aol-edit-screen-has-sections .aol-menu-btn-left {
+        display: table-cell;
+        vertical-align: middle;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+    .edit-screen .aol-menu-btn-left .aui-icon-menu {
+        line-height: 30px;
+    }
+    .edit-screen .aui-header-main-section-left {
+        display: table;
+        /*position: absolute;*/
+        margin-top: 4px;
+        left: 0;
+    }
+
+
+    .edit-screen #aui-footer-content > .es-save-close-button,
+    .edit-screen #aui-footer-content > .es-duplicate-button,
+    .edit-screen #aui-footer-content > .es-delete-button,
+    .edit-screen #aui-footer-content > .es-revert-button {
+        display: none;
+    }
+
+    .f-section-container > .f-section.aui-section {
+        margin-top: 0;
+    }
+
+    /* IMAGE DISPLAY IN FIRST SECTION */
+
+    .es-image-column {
+        text-align: left;
+        margin-bottom: 0;
+    }
+    .es-image-column .edit-screen-image-large {
+        float: right;
+        width: 100px;
+        margin-top: -88px;
+        margin-top: -62px;
+    }
+
+    #section-main > .section-links {
+        display: none;
+    }
+
+    .f-section > .section-title:after {
+        padding-top: 6px;
+        display: block;
+    }
+
+    #aui-header-content-box .section-title {
+        letter-spacing: 1px;
+        font-size: 12px;
+        padding-bottom: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .edit-screen .uploader.aol-uploader-big-box {
+        display: none !important;
+    }
+    .aol-uploader-footer {
+        display: inline-block !important;
+        width: 120px;
+        height: 40px;
+        overflow: hidden;
+    }
+
+}
+
+@media (max-width: 595px) {
+    .aol-header-thumbnail-wrapper,
+    .aol-page-docked .edit-screen .aol-dock-menu-button,
+    .edit-screen .aol-es-next-record-btn,
+    .edit-screen .aol-es-prev-record-btn {
+        display: none;
+    }
+}
+
+
+/*
+ARTWORKS
+*/
+
+.es-artworks-title-year-field .fr-main-field {
+    width: 70%;
+}
+
+.hide-artist-fields {
+        display:none;
+    }
+   
+/* END ARTWORKS */ 
+
+/* USERS */
+#user_permission_groups_save_footer {
+    width:  100%;
+    height: 100%;
+    position: relative !important;
+    z-index: 200;
+    border-top: solid #ddd 1px;
+    box-shadow: 0 -10px 13px -10px #f1f1f1;
+    transition-property: transform;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	display: none;
+}
+.aui-theme-dark #user_permission_groups_save_footer {
+    border-color: #444;
+    box-shadow: 0 -10px 13px -10px #666;
+}
+#user_permission_groups_save_footer  > div {
+    max-width: 960px;
+    margin: auto;
+}
+#user_permission_groups_save_footer.visible {
+    display: block;
+}
+
+@media (min-width: 550px) and (max-width: 1100px) {
+    #user_permission_groups_save_footer > div {
+        padding-left: 10px;
+    }
+}
+
+
+/* END USERS */
+
+.view-on-a-wall-overlay.aui-overlay-box-content-wrapper {
+    max-width: 400px;
+}
+
+.view-in-room-warning-container {
+    max-width: 600px;
+    margin-top: 30px;
+}
+
+.view-in-room-settings-container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0;
+    align-items: start;
+    margin: 30px 0;
+    max-width: 600px;
+    padding: 0 !important;
+    border-color: #e6e6e6 !important;
+}
+
+.aui-neutral.view-in-room-settings-container {
+    border-color: #e6e6e6 !important;
+}
+
+.view-in-room-image-col {
+    padding: 10px;
+}
+
+.view-in-room-image-col img,
+.view-in-room-image-col .no-image-placeholder {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.view-in-room-text-col {
+    padding: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    min-width: 0;
+}
+
+.view-in-room-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100px;
+    font-size: 13px;
+}
+
+.view-in-room-details-container p {
+    color: #000;
+}
+
+.no-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 150px;
+    aspect-ratio: 1 / 1;
+    background-color: #f7f7f7;
+}
+
+.no-image-icon {
+    font-size: 24px;
+    color: #ccc
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.view-in-room-image-container button.edit-image {
+    display: block;
+}

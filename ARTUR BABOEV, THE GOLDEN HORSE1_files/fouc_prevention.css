@@ -1,0 +1,6 @@
+/* FOUC prevention  */
+
+body.first-load-complete,
+body.splash-loader-active {
+    opacity: 1 !important;
+}

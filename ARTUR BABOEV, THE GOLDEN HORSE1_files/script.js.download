@@ -1,0 +1,80 @@
+(function($) {
+
+    window.theme = {
+
+        init: function() {
+
+            window.theme.global.init();
+        },
+        
+        _push_to_fullheight: function() {
+            var content_module_offset = $('#content').offset().top;
+            $('#content').css({'min-height':'calc(100vh - '+content_module_offset+'px)'});
+        },
+
+        global: {
+
+            init: function() {
+                if ($('.subsection-wrapper-cover, .record-page-content-combined .scroll_section_cover').length) {
+                    $(window).resize(function() {
+                        if ($('.record-page-content-combined .scroll_section_cover').length) {
+                            
+                            // Reset css
+                            $('#cover_page_slideshow').css("min-height", "");
+                            $('#cover_page_slideshow_caption').css({"bottom": "", "top": ""});
+                            $('#cover_page_slideshow_pager').show();
+                            
+                            var heading_wrapper_top_offset = $('.heading_wrapper').offset().top;
+                            var object_height = $('.heading_wrapper').innerHeight() + heading_wrapper_top_offset;
+                            
+                            if (object_height > window.innerHeight) {
+                                $('#cover_page_slideshow').css("min-height", object_height);
+                            }
+                            
+                            if ($('#cover_page_slideshow_pager').length) {
+                                var cover_page_slideshow_pager_top_offset = $('#cover_page_slideshow_pager').offset().top;
+                                var subnav_top_offset = $('.heading_wrapper #sub_nav').offset().top;
+                                var subnav_height = $('.heading_wrapper #sub_nav').innerHeight() + subnav_top_offset;
+                                if (subnav_height >= cover_page_slideshow_pager_top_offset) {
+                                    $('#cover_page_slideshow_pager').hide();
+                                    $('#cover_page_slideshow_caption').css({"bottom": "auto", "top": (object_height - 60)});
+                                }
+                            }
+                            
+                        } else {
+                            var object_height = $('.heading_wrapper').height() + $('.heading_wrapper').offset().top;
+                            if(object_height > window.innerHeight) {
+                                // Temp Bug Fix.. The height of the elements was set as 100vh, on a small screen this meant that the menu was cut off, 
+                                // this code is meant to prevent this from happening. To reproduce the bug, set if False above so only the code in the else block gets run.
+                                theme._push_to_fullheight('.subsection-wrapper-cover #content', 'min-height', 0, 99);
+                                $('.subsection-wrapper-cover #cover_page_slideshow').css('min-height', object_height);
+                                $('#cover_page_slideshow_pager').hide();
+                            } else {
+                                $('#cover_page_slideshow_pager').show();
+                                theme._push_to_fullheight('.subsection-wrapper-cover #content', 'min-height', 0, 0);
+                                theme._push_to_fullheight('.subsection-wrapper-cover #cover_page_slideshow', 'min-height', 0, 0);
+                            }
+                        }
+                    }).trigger('resize');
+                }
+                if ($('#image_gallery #image_container .image span img').length) {
+                    $(window).resize(function() {
+                        window.galleries.image_gallery.init();
+                    }).trigger('resize');
+                }
+            }
+
+        }
+
+    };
+
+
+    $(document).ready(function() {
+
+        window.theme.init();
+
+    });
+
+})(jQuery);
+
+

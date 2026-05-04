@@ -1,0 +1,39 @@
+
+
+    /* Fancybox overrides ----------------------------------------- */
+
+    /*
+    .fancybox-lock {
+        overflow: visible !important;
+        margin-right: 0 !important;
+    }
+    .fancybox-lock .fancybox-overlay {
+        overflow: visible !important;
+    }*/
+
+    #fancybox-loading {
+        background: #FFF;
+	-webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .fancybox-skin {
+        background: #FFF;
+    }
+
+    .fancybox-close, .fancybox-prev span, .fancybox-next span {
+        background-image: url(artlogic_fancybox_sprite.png);
+    }
+
+    #fancybox-loading div {
+        background: url(artlogic_fancybox_loading.gif) no-repeat scroll center center transparent;
+        height: 44px;
+        width: 44px;
+    }
+
+
+    .fancybox-title {
+            font: inherit;
+            line-height: 1.4em;
+    }

@@ -1,0 +1,9 @@
+window.Artlogic = window.Artlogic || {};
+Artlogic.import = function(src) {
+    return import(/* webpackChunkName: "chunk" */'./artlogic_modules/'+src);
+}
+
+function secureEval(code) {
+	return Function('"use strict";return (' + code + ');')();
+}
+window.secureEval = secureEval;

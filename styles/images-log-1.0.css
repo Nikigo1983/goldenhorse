@@ -1,0 +1,22 @@
+.f.browse-list-input {
+    width: 90%;
+    margin-left: 2px;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.f.browse-list-input:focus {
+    border: inherit;
+    /*border-color: transparent;*/
+    background-color: #fff;
+}
+
+.inline-stickybox-editor {
+    cursor: pointer;
+    border-bottom: 1px solid #dcdcdc;
+    display: inline;
+}
+
+.inline-stickybox-editor.placeholder {
+    border-bottom: 0;
+}

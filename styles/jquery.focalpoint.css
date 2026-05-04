@@ -1,0 +1,53 @@
+.fp-container-inner {
+    visibility: hidden;
+}
+
+.fp-image {
+    margin: 0;
+    background: center center no-repeat;
+    background-size: cover;
+}
+
+.fp-master-image-container {
+    position: relative;
+}
+
+.fp-master-image {
+    /*position: absolute;*/
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 380px;
+}
+
+.fp-position-image {
+    position: absolute;
+    cursor: move;
+}
+
+.fp-copy-image {
+    float: left;
+    box-sizing: border-box;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+}
+
+.fp-copy-image-square {
+    width: 27%;
+    height: 98px;
+}
+
+.fp-copy-image-2x3 {
+    width: 27%;
+    height: 66px;
+}
+
+.fp-copy-image-3x2 {
+    width: 19%;
+    height: 98px;
+}
+
+.fp-copy-image-16x9 {
+    border-right: 0;
+    width: 27%;
+    height: 56px;
+}

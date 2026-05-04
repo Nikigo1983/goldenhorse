@@ -1,0 +1,86 @@
+/****************************************************************************************************
+*
+*   Selected font awesome 5 icons. We cannot import the full set as it changes existing icons
+*   e.g. 'external-link' becomes fatter, 'calendar' changes completely
+*
+*   Add selected icons from static/lib/webfonts/font-awesome/font-awesome-5.9.0/css/fontawesome.css
+*   And add fa5 class (not fa) to the <i> tag
+*   e.g. <i class="fa5 fa-clock"></i>
+*
+*****************************************************************************************************/
+
+
+/** Add icons here */
+
+.fa-clock:before {content: "\f017"; }
+.fa-box:before {content: "\f466"; }
+.fa-eye:before {content: "\f06e"; }
+.fa-user-friends:before {content: "\f500";}
+.fa-receipt:before {content: "\f543";}
+.fa-user-circle:before {content: "\f2bd";}
+.fa-eye:before {content: "\f06e";}
+.fa-bolt:before {content: "\f0e7";}
+.fa-circle-xmark:before {content: "\f057"; }
+.fa-xmark:before {content: "\f00d"; }
+.fa-chevrons-right:before {content: "\f324"; }
+.fa-clipboard-list:before {content: "\f46d"; }
+.fa-x-twitter:before {content:"\1D54F"; font-size: 22px;}
+.fa-play:before {content: "\f04b"; }
+.fa-video:before {content: "\f03d"; }
+.fa-cube:before {content: "\f1b2"; }
+
+
+/** Load font face and set fa5 styles **/
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url("../webfonts/fa-solid-900.eot");
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("../webfonts/fa-regular-400.eot");
+  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: url("../webfonts/fa-light-300.eot");
+  src: url("../webfonts/fa-light-300.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-light-300.woff2") format("woff2"), url("../webfonts/fa-light-300.woff") format("woff"), url("../webfonts/fa-light-300.ttf") format("truetype"), url("../webfonts/fa-light-300.svg#fontawesome") format("svg"); }
+
+.fa5 {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 900; 
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1; 
+}
+
+.fa5r {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 400;
+}
+
+.fa5s {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 900;
+}
+
+
+.fa5l {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+}

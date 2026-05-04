@@ -1,0 +1,160 @@
+/*
+UploadiFive
+Copyright (c) 2012 Reactive Apps, Ronnie Garcia
+*/
+
+/*.uploadifive-button {*/
+/*	background-color: #505050;*/
+/*	background-image: linear-gradient(bottom, #505050 0%, #707070 100%);*/
+/*	background-image: -o-linear-gradient(bottom, #505050 0%, #707070 100%);*/
+/*	background-image: -moz-linear-gradient(bottom, #505050 0%, #707070 100%);*/
+/*	background-image: -webkit-linear-gradient(bottom, #505050 0%, #707070 100%);*/
+/*	background-image: -ms-linear-gradient(bottom, #505050 0%, #707070 100%);*/
+/*	background-image: -webkit-gradient(*/
+/*		linear,*/
+/*		left bottom,*/
+/*		left top,*/
+/*		color-stop(0, #505050),*/
+/*		color-stop(1, #707070)*/
+/*	);*/
+/*	background-position: center top;*/
+/*	background-repeat: no-repeat;*/
+/*	-webkit-border-radius: 30px;*/
+/*	-moz-border-radius: 30px;*/
+/*	border-radius: 30px;*/
+/*	border: 2px solid #808080;*/
+/*	color: #FFF;*/
+/*	font: bold 12px Arial, Helvetica, sans-serif;*/
+/*	text-align: center;*/
+/*	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);*/
+/*	text-transform: uppercase;*/
+/*	width: 100%;*/
+/*}*/
+
+
+/*.uploadifive-button:hover {*/
+/*	background-color: #606060;*/
+/*	background-image: linear-gradient(top, #606060 0%, #808080 100%);*/
+/*	background-image: -o-linear-gradient(top, #606060 0%, #808080 100%);*/
+/*	background-image: -moz-linear-gradient(top, #606060 0%, #808080 100%);*/
+/*	background-image: -webkit-linear-gradient(top, #606060 0%, #808080 100%);*/
+/*	background-image: -ms-linear-gradient(top, #606060 0%, #808080 100%);*/
+/*	background-image: -webkit-gradient(*/
+/*		linear,*/
+/*		left bottom,*/
+/*		left top,*/
+/*		color-stop(0, #606060),*/
+/*		color-stop(1, #808080)*/
+/*	);*/
+/*	background-position: center bottom;*/
+/*}*/
+
+.uploadifive-queue-item {
+	background-color: #F5F5F5;
+	border-bottom: 1px dotted #D5D5D5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font: 12px Arial, Helvetica, Sans-serif;
+	margin-top: 3px;
+	padding: 15px;
+}
+.uploadifive-queue-item .close {
+	background: url('uploadifive-cancel.png') 0 0 no-repeat;
+	display: block;
+	float: right;
+	height: 16px;
+	text-indent: -9999px;
+	width: 16px;
+}
+.uploadifive-queue-item .progress {
+	border: 1px solid #D0D0D0;
+	height: 3px;
+	margin-top: 5px;
+	width: 100%;
+}
+.uploadifive-queue-item .progress-bar {
+	background-color: #0072BC;
+	height: 3px;
+	width: 0;
+}
+
+/* ADDED BY ROBIN */
+.uploadifive-queue-item {
+    background: transparent;
+    border: none;
+    padding: 10px 0;
+    font-size: 13px;
+    font-family: 'ProximaNova', sans-serif;
+}
+.uploadifive-queue-item .progress {
+    border: none;
+    height: 2px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+.uploadifive-queue-item .progress-bar {
+    background-color: #95d6ff;
+    height: 3px;
+    width: 0;
+}
+.uploadifive-queue-item .close {
+    font-family: 'Artlogic Icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background: transparent;
+    display: block;
+    float: right;
+    height: 16px;
+    width: 16px;
+
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjM2cHgiIGhlaWdodD0iMzZweCIgdmlld0JveD0iMCAwIDM2IDM2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy41LjEgKDI1MjM0KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5TbGljZSAxPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9ImNsb3NlLWJ0biIgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTguMzI0MTE2LCAxNy4zMjQxMTYpIHJvdGF0ZSgtMzE1LjAwMDAwMCkgdHJhbnNsYXRlKC0xOC4zMjQxMTYsIC0xNy4zMjQxMTYpIHRyYW5zbGF0ZSg1LjgyNDExNiwgNS4zMjQxMTYpIiBmaWxsPSIjOTA5MDkwIj4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS0yIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIiB4PSIxMiIgeT0iMS4xMzY4NjgzOGUtMTMiIHdpZHRoPSIxIiBoZWlnaHQ9IjI0Ij48L3JlY3Q+CiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuNTAwMDAwLCAxMi4wMDAwMDApIHJvdGF0ZSgtMjcwLjAwMDAwMCkgdHJhbnNsYXRlKC0xMi41MDAwMDAsIC0xMi4wMDAwMDApICIgeD0iMTIiIHk9IjEuMTM2ODY4MzhlLTEzIiB3aWR0aD0iMSIgaGVpZ2h0PSIyNCI+PC9yZWN0PgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+) 50% 50% no-repeat;
+    background-size: 26px 26px;
+    opacity: 1;
+}
+
+/*.uploadifive-button,*/
+/*.uploadifive-button:hover {*/
+/*    background: #fff;*/
+/*    color: #888;*/
+/*    font-weight: 500;*/
+/*    -webkit-font-smoothing: antialiased;*/
+/*    font-family: ProximaNova;*/
+/*    letter-spacing: 1px;*/
+/*    border: 1px solid #C8C8C8;*/
+/*    width: 110px;*/
+/*    cursor: pointer;*/
+/*    padding: 0;*/
+/*    border-radius: 22px;*/
+/*    margin-left: 7px;*/
+/*    margin-top: 2px;*/
+/*    margin-bottom: 2px;*/
+/*}*/
+/*.uploadifive-button:hover {*/
+/*    color: #51A8E0;*/
+/*}*/
+/*.uploadifive-button.aui-button-highlighted {*/
+/*	background-color: #78C7FB;*/
+/*	border-color: #78C7FB;*/
+/*	color: #fff;*/
+/*    -webkit-font-smoothing: auto;*/
+/*}*/
+
+/*.uploadifive-button.aui-button-simple {*/
+/*	border: none;*/
+/*}*/
+
+/*.uploadifive-button > input {*/
+/*	cursor: pointer;*/
+/*}*/
+
+
+/* Hector - Commented out a bunch of css as I changed the javascript a bit so that the buttons can happily use our normal css classes */

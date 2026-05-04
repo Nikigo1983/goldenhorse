@@ -1,0 +1,242 @@
+var scripts = {
+	plugin_tweaks: {
+		src: 'galleries_js/plugin_tweaks.js',
+		condition: 1
+	},
+	device: {
+		src: 'galleries_js/device.js',
+		condition: 1
+	},
+	navigation: {
+		src: 'galleries_js/navigation.js',
+		condition: "!$('body').hasClass('quick-view-active') && ($('#sub_nav.navigation ul li, #exhibitions_nav.navigation ul li, .list_grid_control.navigation ul li').length || $('.navigation.navigation_expandable').length || $('#full_nav .ul_nested').length)"
+	},
+	responsive: {
+		src: 'galleries_js/responsive.js',
+		condition: "$('body').hasClass('site-responsive')"
+	},
+	layout: {
+		src: 'galleries_js/layout.js',
+		condition: 1
+	},
+	lists: {
+		src: 'galleries_js/lists.js',
+		condition: "$('.records_list_ajax').length || window.core.ajax_sections_link_rewrite || $('.remove_html_whitespace').length || $('.records_list ul li img').length || $('.subnav_dropdown').length"
+	},
+	slideshow: {
+		src: 'galleries_js/slideshow.js',
+		condition: "$('#parallax-hero_header').length || $('#mirror-slideshow ul, #slideshow ul').length || ($('body.homepage_slideshow_continuous_cycle').length && $('#slideshow .slideshow_pager.location_pagination_enabled .slideshow-pager-item-wrapper.slideshow-text .slideshow-pager-item').length)"
+	},
+	vertical_homepage_slideshow: {
+		src: 'galleries_js/vertical_homepage_slideshow.js',
+		condition: "$('.fullscreen_vertical_slideshow').length"
+	},
+	artworks: {
+		src: 'galleries_js/artworks.js',
+		condition: "$('#artworks_filter_panel').length || $('.roomview-image').length || $('#image_gallery .image[data-width]').length || $('.image_hover_zoom').length "
+	},
+	artwork_filters: {
+		src: 'galleries_js/artwork_filters.js',
+		condition: "$('#filterpanel_form').data('artworks_api_enabled') !== true && ($('#filterpanel_form').length || $('.multi-range-slider').length || $('.clear_filters').length || $('.artwork-filter-open-btn').length)"
+	},
+	image_gallery: {
+		src: 'galleries_js/image_gallery.js',
+		condition: "$('.image_gallery_multiple').length || $('#ig_slideshow').length || $('#ig_slider').length || $('.detail_expand_grid').length || $('.ig_slider').length || $('#image_gallery').length"
+	},
+	artist_list_slideshow: {
+		src: 'galleries_js/artist_list_slideshow.js',
+		condition: "($('#artist_list_slideshow').length && !$('#artist_list_slideshow').hasClass('no-slideshow'))"
+	},
+	cover_page_slideshow: {
+		src: 'galleries_js/cover_page_slideshow.js',
+		condition: "$('#cover_page_slideshow').length"
+	},
+	slide_brightness: {
+		src: 'galleries_js/slide_brightness.js',
+		condition: "$('#slideshow.fullscreen_slideshow.override-slide-brightness ul, #slideshow.fullscreen_slideshow.detect-slide-brightness ul, #cover_page_slideshow.detect-slide-brightness ul, .fullscreen_vertical_slideshow').length"
+	},
+	artist_list_preview: {
+		src: 'galleries_js/artist_list_preview.js',
+		condition: "($('#list_preview_slideshow').length && !$('#list_preview_slideshow').hasClass('no-slideshow'))"
+	},
+	artist_list_columns: {
+		src: 'galleries_js/artist_list_columns.js',
+		condition: "$('.artists_list_dynamic_columns').length"
+	},
+	image_popup: {
+		src: 'galleries_js/image_popup.js',
+		condition: "$('body.prevent_user_image_save').length || $('a.image_popup, a.fancybox').length"
+	},
+	publications: {
+		src: 'galleries_js/publications.js',
+		condition: "$('a.fancybox_gallery').length"
+	},
+	quicksearch: {
+		src: 'galleries_js/quicksearch.js',
+		condition: "$('.header_quick_search').length || $('#quicksearch_field').length"
+	},
+	artist: {
+		src: 'galleries_js/artist.js',
+		condition: "$('#artist_enquire_form.errorOccurred') || $('#artist_enquire_form.captchaError').length"
+	},
+	contact_form_popup: {
+		src: 'galleries_js/contact_form_popup.js',
+		condition: "$('a[href$=\"/contact/form/\"], .website_contact_form').length || $('#contact_form_inline, .section-contact.page-form').length || $('#contact_form_custom').length || $('#contact_form #contactForm').length"
+	},
+	mailing_list_form: {
+		src: 'galleries_js/mailing_list_form.js',
+		condition: "$('#mailing_list_form, .mailing_list_form').length"
+	},	
+	feature_popup: {
+		src: 'galleries_js/feature_popup.js',
+		condition: "$('#feature_popup_container').length"
+	},
+	pageload: {
+		src: 'galleries_js/pageload.js',
+		condition: "$('body').hasClass('pageload-splash-active') || $('body').hasClass('pageload-ajax-navigation-active')"
+	},
+	pageload_load_more_pagination: {
+		src: 'galleries_js/pageload_load_more_pagination.js',
+		condition: "($('body').hasClass('pageload-ajax-navigation-active')) && $('.page_stats').length && $('.ajax_load_more_pagination_enabled').length"
+	},
+	parallax: {
+		src: 'galleries_js/parallax.js',
+		condition: "$('.parallax-element').length"
+	},
+	forms: {
+		src: 'galleries_js/forms.js',
+		condition: "$('.form').length"
+	},
+	mailinglist_signup_form_popup: {
+		src: 'galleries_js/mailinglist_signup_form_popup.js',
+		condition: "$('a.mailinglist_signup_popup_link').length || $('#mailinglist_signup_close_popup_link').length"
+	},
+	google_map_popup: {
+		src: 'galleries_js/google_map_popup.js',
+		condition: "$('#footer .website_map_popup').length"
+	},
+	prevent_user_image_save: {
+		src: 'galleries_js/prevent_user_image_save.js',
+		condition: "$('body.prevent_user_image_save').length"
+	},
+	cookie_notification: {
+		src: 'galleries_js/cookie_notification.js',
+		condition: "$('#cookie_notification').length"
+	},
+	google_maps: {
+		src: 'galleries_js/google_maps.js',
+		condition: "$('[id*=\"map_basic\"]').length"
+	},
+	misc: {
+		src: 'galleries_js/misc.js',
+		condition: "$('.button, .loader_simple, .button_loader, .loader_basic, .extended_click_area:not(.click_event_added)').length"
+	},
+	accessibility: {
+		src: 'galleries_js/accessibility.js',
+		condition: 1
+	},
+	scroll: {
+		src: 'galleries_js/scroll.js',
+		condition: 1
+	},
+	sub_navigation: {
+		src: 'galleries_js/sub_navigation.js',
+		condition: "!$('body').hasClass('quick-view-active') && ($('.scroll_sub_nav_enabled').length && $('.scroll_section_container').length && $('.page-param-type-artist_id #sub_nav.navigation, .page-param-type-exhibition_id #sub_nav.navigation').length) || (!$('.scroll_section_container').length || !$('.page-param-type-artist_id, .page-param-type-exhibition_id').length)"
+	},
+	scroll_sections: {
+		src: 'galleries_js/scroll_sections.js',
+		condition: "$('.record-page-content-combined, .advanced-content').length"
+	},
+	global_analytics: {
+		src: 'galleries_js/global_a.js',
+		condition: "window.ga"
+	},
+	viewing_room: {
+		src: 'galleries_js/viewing_room.js',
+		condition: "$('.countdown_clock').length"
+	},
+	CryptoJS: {
+		src: 'plugins/crypto-js.js',
+		condition: "$('#cachedata').length"
+	}, 
+	ar_artworks: {
+		src: 'galleries_js/ar_artworks.js',
+		condition: "$('.view-in-ar-button').length"
+	}, 
+	// model_viewer: {
+	// 	src: 'galleries_js/model_viewer.js',
+	// 	condition: "$('.view-in-ar-button').length"
+	// }, 
+	shipping_widget: {
+		src: 'galleries_js/shipping_widget.js',
+		condition: "$('.convelio-widget-button').length"
+	},
+	additional: {
+		src: 'galleries_js/additional.js',
+		condition: 1
+	},
+	image_brightness: {
+		src: 'galleries_js/image_brightness.js',
+		condition: 1
+	},
+	image_attributes: {
+		src: 'galleries_js/image_attributes.js',
+		condition: "$('.slider_has_mobile_image').length"
+	},
+	splide: {
+		src: 'galleries_js/splide.js',
+		condition: "$('.splide__track').length"
+	},
+	splide_slideshow: {
+		src: 'galleries_js/splide_slideshow.js',
+		condition: "$('.splide__track').length"
+	}
+};
+
+
+window.galleries = window.galleries || {};
+async function loadGalleryModules() {
+	/**
+	 * Checks the conditional expression of the script and loads if true.
+	 * And runs the init function.
+	 */
+
+	var galleryModule = [];
+	window.galleries = window.galleries || {};
+
+	for (var script in scripts) {
+		if ((secureEval(scripts[script].condition))) {
+			// The condition has passed so store the import promise
+			//   in the galleryModule array. This allows us to run the init() functions
+			//   in order, later. Without delaying the requests for the modules.
+
+			(function(script) {
+				//galleryModule.push(Artlogic.import(scripts[script].src));
+				try {
+					galleryModule.push(Artlogic.import(scripts[script].src));
+				} catch (e) {
+					console.warn(e);
+				}
+
+			})(script)
+		}
+	}
+
+	// Wait for all the imports to resolve. Then run the init()'s asynchronously
+	var passed = await Promise.all(galleryModule);
+	for(var m in passed) {
+		var passed_mod = passed[m].default;
+		if (passed_mod) {
+			if (typeof passed_mod.init == 'function') passed_mod.init();
+		}
+	}
+
+}
+
+window.galleries.init = loadGalleryModules;
+loadGalleryModules()
+	.then(function() {
+		$.getScript('/scripts/main.js', function() {
+			if (typeof window.modulesReady == 'function') window.modulesReady();
+		});
+	});
