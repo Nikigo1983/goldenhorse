@@ -832,7 +832,7 @@ nav.home-hero-menu.site-overlay-menu .home-hero-menu-close {
 
 .contact-person-name {
   margin: 0 0 12px;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: none;
   letter-spacing: 0;
   font-weight: 600;
@@ -840,7 +840,7 @@ nav.home-hero-menu.site-overlay-menu .home-hero-menu-close {
 
 .contact-person-email {
   margin: 0 0 14px;
-  font-size: 11px;
+  font-size: 13px;
   text-transform: none;
   letter-spacing: 0;
   font-weight: 400;
@@ -848,7 +848,7 @@ nav.home-hero-menu.site-overlay-menu .home-hero-menu-close {
 
 .contact-person-note {
   margin: 0;
-  font-size: 9px;
+  font-size: 11px;
   text-transform: none;
   letter-spacing: 0;
   color: #9a9a9a;

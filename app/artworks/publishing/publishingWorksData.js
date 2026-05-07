@@ -13,7 +13,7 @@ export const publishingWorksData = [
   {
     id: "art-publishig-1",
     slug: "art-publishig-1",
-    title: "1",
+    title: "Bilingual (Arabic and English) book about Arabian horses with the history of the breed and images.",
     cardClass: "is-wide",
     images: [
       publishing1Image.src,
@@ -27,6 +27,11 @@ export const publishingWorksData = [
       publishing9Image.src,
       publishing10Image.src,
     ],
-    details: ["1", "Copyright The Artist", "$ 500.00"],
+    details: [
+      "Perfect present for connoisseurs of Arabian horses.",
+      "Limited edition.",
+      "Copyright The Artist",
+      "$ 250.00",
+    ],
   },
 ];

@@ -28,7 +28,7 @@ export const worksData = [
     title: "In the Garden, 100x80cm, 2025",
     cardClass: "is-portrait",
     images: [baboev7Image.src, baboev8Image.src],
-    details: ["Copyright The Artist", "$ 8,500.00"],
+    details: ["Copyright The Artist", "$ 5,000.00"],
   },
   {
     id: "a-second",
@@ -36,7 +36,7 @@ export const worksData = [
     title: "A Second, 110x74cm, 2022",
     cardClass: "is-landscape",
     images: [baboev9Image.src, baboev10Image.src, baboev11Image.src],
-    details: ["Copyright The Artist", "$ 8,500.00"],
+    details: ["Copyright The Artist", "$ 5,000.00"],
   },
   {
     id: "passion",
@@ -44,7 +44,7 @@ export const worksData = [
     title: "Passion, 78x58cm, 2021",
     cardClass: "is-portrait",
     images: [baboev12Image.src],
-    details: ["Archive print, passepartout, art glass, wooden frame", "$ 4,500.00"],
+    details: ["Archive print, passepartout, art glass, wooden frame", "$ 2,500.00"],
   },
   {
     id: "diptych-abha-2",
@@ -52,7 +52,7 @@ export const worksData = [
     title: "The Diptych ABHA (Part 2), 52,5x75cm, 2018",
     cardClass: "is-portrait",
     images: [baboev15Image.src, baboev17Image.src],
-    details: ["52,5x75cm, 2018", "Copyright The Artist"],
+    details: ["52,5x75cm, 2018", "Copyright The Artist", "$ 3,500.00"],
   },
   {
     id: "diptych-abha-1",
@@ -60,7 +60,7 @@ export const worksData = [
     title: "The Diptych ABHA (Part 1), 52,5x75cm, 2018",
     cardClass: "is-portrait",
     images: [baboev13Image.src, baboev14Image.src],
-    details: ["52,5x75cm, 2018", "Copyright The Artist", "$ 5,000.00"],
+    details: ["52,5x75cm, 2018", "Copyright The Artist", "$ 3,500.00"],
   },
   {
     id: "mirage",
@@ -68,7 +68,7 @@ export const worksData = [
     title: "Mirage, 120x42cm, 2014",
     cardClass: "is-panorama",
     images: [baboev18Image.src, baboev19Image.src],
-    details: ["120x42cm, 2014", "Copyright The Artist", "$ 8,500.00"],
+    details: ["120x42cm, 2014", "Copyright The Artist", "$ 5,000.00"],
   },
   {
     id: "horse-collection",
@@ -92,7 +92,7 @@ export const worksData = [
     title: "Golden, 92x72cm, 2010",
     cardClass: "is-portrait-large",
     images: [baboev25Image.src, baboev26Image.src, baboev27Image.src, baboev28Image.src],
-    details: ["Copyright The Artist", "$ 6,000.00"],
+    details: ["Copyright The Artist", "$ 5,000.00"],
   },
   {
     id: "apocalypse",
@@ -100,6 +100,6 @@ export const worksData = [
     title: "Apocalypse, 105x76cm, 2012",
     cardClass: "is-landscape",
     images: [baboev20Image.src, baboev21Image.src, baboev22Image.src, baboev23Image.src, baboev24Image.src],
-    details: ["105x76cm, 2012", "Copyright The Artist", "$ 8,500.00"],
+    details: ["105x76cm, 2012", "Copyright The Artist", "$ 5,000.00"],
   },
 ];
