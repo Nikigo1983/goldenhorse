@@ -2,6 +2,7 @@ import { Nunito_Sans } from "next/font/google";
 import { Montserrat } from "next/font/google";
 import Chrome from "../components/Chrome";
 import CookieBanner from "../components/CookieBanner";
+import logo3 from "../logo3.jpg";
 import "./globals.css";
 
 const nunito = Nunito_Sans({
@@ -20,6 +21,9 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "The Golden Horse",
   description: "Dubai Art Gallery",
+  icons: {
+    icon: logo3.src,
+  },
 };
 
 export default function RootLayout({ children }) {
