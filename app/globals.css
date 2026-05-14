@@ -955,7 +955,8 @@ nav.home-hero-menu.site-overlay-menu a.is-active {
   margin: 10px 0 40px;
   font-size: 12px;
   letter-spacing: 0.2em;
-  color: #9c9c9c;
+  font-weight: 500;
+  color: #5c5c5c;
 }
 
 .contact-person-block {
@@ -967,7 +968,8 @@ nav.home-hero-menu.site-overlay-menu a.is-active {
   margin: 0 0 16px;
   font-size: 11px;
   letter-spacing: 0.18em;
-  color: #a2a2a2;
+  font-weight: 600;
+  color: #6a6a6a;
 }
 
 .contact-person-name {
@@ -991,7 +993,8 @@ nav.home-hero-menu.site-overlay-menu a.is-active {
   font-size: 14px;
   text-transform: none;
   letter-spacing: 0;
-  color: #9a9a9a;
+  font-weight: 500;
+  color: #3a3a3a;
   line-height: 1.55;
 }
 
