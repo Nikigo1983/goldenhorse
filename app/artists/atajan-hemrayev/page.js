@@ -59,7 +59,9 @@ export default function AtajanHemrayevPage() {
                 <img src={work.image} alt={work.title} className="hemrayev-work-image" />
               </Link>
               <h3>{work.title}</h3>
-              <button type="button">Enquire</button>
+              <button type="button" className="artist-work-enquire-btn">
+                Enquire
+              </button>
             </article>
           ))}
         </div>

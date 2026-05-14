@@ -26,7 +26,11 @@ export default function PaintingWorksPage() {
                 {work.sold ? <span className="artist-work-sold-badge">Sold</span> : null}
               </Link>
               <h3>{`Dmitry Luchanov, ${work.title}`}</h3>
-              <button type="button" onClick={() => setSelectedWorkId(work.id)}>
+              <button
+                type="button"
+                className="artist-work-enquire-btn"
+                onClick={() => setSelectedWorkId(work.id)}
+              >
                 Enquire
               </button>
             </article>

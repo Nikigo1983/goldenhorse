@@ -1,7 +1,6 @@
 import Link from "next/link";
+import ArtistsInlineNav from "../../components/ArtistsInlineNav";
 import { artists } from "../../data/siteData";
-
-const artistMenu = ["Painting", "Photography", "Porcelain", "Art Books", "Jewelry Art"];
 
 export default function ArtistsPage() {
   return (
@@ -11,11 +10,7 @@ export default function ArtistsPage() {
         <h2 className="artists-subtitle">DUBAI ART GALLERY</h2>
         <div className="divider artists-divider" />
         <p className="artists-tagline">presents fine art & crafts</p>
-        <div className="artists-inline-menu">
-          {artistMenu.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
+        <ArtistsInlineNav />
       </div>
 
       <div className="artists-grid-showcase">

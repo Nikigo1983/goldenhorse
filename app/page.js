@@ -2,11 +2,34 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { categories, navLinks } from "../data/siteData";
 
 const heroImage = "/images/main_pic.jpg";
 
+function navLinkClass(pathname, href) {
+  if (href === "/") return pathname === "/" ? "is-active" : "";
+  return pathname.startsWith(href) ? "is-active" : "";
+}
+
+function categoryHref(cat) {
+  if (cat === "Painting") return "/artworks/painting";
+  if (cat === "Photography") return "/artworks/photography";
+  if (cat === "Sculpture") return "/artworks/sculpture";
+  if (cat === "Porcelain") return "/artworks/porcelain";
+  if (cat === "Jewelry Art") return "/artworks/jewelry";
+  if (cat === "Publishing") return "/artworks/publishing";
+  return "/artworks";
+}
+
+function categoryLinkClass(pathname, href) {
+  if (pathname === href) return "is-active";
+  if (pathname.startsWith(`${href}/`)) return "is-active";
+  return "";
+}
+
 export default function HomePage() {
+  const pathname = usePathname() ?? "";
   const [menuOpen, setMenuOpen] = useState(false);
   const [showHeroUi, setShowHeroUi] = useState(true);
 
@@ -57,7 +80,12 @@ export default function HomePage() {
               <span />
             </button>
             {navLinks.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+              <Link
+                key={item.href}
+                href={item.href}
+                className={navLinkClass(pathname, item.href)}
+                onClick={() => setMenuOpen(false)}
+              >
                 {item.label}
               </Link>
             ))}
@@ -75,28 +103,14 @@ export default function HomePage() {
               <div className="home-info-divider" />
 
               <nav className="home-inline-menu" aria-label="Artwork categories">
-                {categories.map((cat) => (
-                  <Link
-                    key={cat}
-                    href={
-                      cat === "Painting"
-                        ? "/artworks/painting"
-                        : cat === "Photography"
-                          ? "/artworks/photography"
-                          : cat === "Sculpture"
-                            ? "/artworks/sculpture"
-                            : cat === "Porcelain"
-                              ? "/artworks/porcelain"
-                          : cat === "Jewelry Art"
-                            ? "/artworks/jewelry"
-                              : cat === "Publishing"
-                                ? "/artworks/publishing"
-                            : "/artworks"
-                    }
-                  >
-                    {cat}
-                  </Link>
-                ))}
+                {categories.map((cat) => {
+                  const href = categoryHref(cat);
+                  return (
+                    <Link key={cat} href={href} className={categoryLinkClass(pathname, href)}>
+                      {cat}
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
 

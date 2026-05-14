@@ -2,6 +2,7 @@ import { Nunito_Sans } from "next/font/google";
 import { Montserrat } from "next/font/google";
 import Chrome from "../components/Chrome";
 import CookieBanner from "../components/CookieBanner";
+import RouteTransitionOverlay from "../components/RouteTransitionOverlay";
 import logo3 from "../logo3.jpg";
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         <Chrome>
           <main className="page-wrap">{children}</main>
         </Chrome>
+        <RouteTransitionOverlay />
         <CookieBanner />
       </body>
     </html>

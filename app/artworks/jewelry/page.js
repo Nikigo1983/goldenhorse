@@ -24,7 +24,7 @@ export default function JewelryWorksPage() {
               <img src={jewelryWork.image} alt={jewelryWork.title} />
             </Link>
             <h3>{jewelryWork.title}</h3>
-            <button type="button" onClick={() => setOpenEnquiry(true)}>
+            <button type="button" className="artist-work-enquire-btn" onClick={() => setOpenEnquiry(true)}>
               Enquire
             </button>
           </article>

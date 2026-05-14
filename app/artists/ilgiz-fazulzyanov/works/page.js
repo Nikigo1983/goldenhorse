@@ -24,7 +24,9 @@ export default function IlgizFazulzyanovWorksPage() {
             <img src={fazulzyanov2Image.src} alt="Pendant Arabian Horse from the Arabesques collection" />
           </Link>
           <h3>Pendant Arabian Horse from the Arabesques collection</h3>
-          <button type="button">Enquire</button>
+          <button type="button" className="artist-work-enquire-btn">
+            Enquire
+          </button>
         </article>
       </div>
     </section>

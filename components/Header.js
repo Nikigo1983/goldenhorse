@@ -1,10 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { navLinks } from "../data/siteData";
 
+function headerNavLinkClass(pathname, href) {
+  if (href === "/") return pathname === "/" ? "is-active" : "";
+  return pathname.startsWith(href) ? "is-active" : "";
+}
+
 export default function Header() {
+  const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const ticking = useRef(false);
@@ -61,7 +68,12 @@ export default function Header() {
             <span />
           </button>
           {navLinks.map((item) => (
-            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <Link
+              key={item.href}
+              href={item.href}
+              className={headerNavLinkClass(pathname, item.href)}
+              onClick={() => setOpen(false)}
+            >
               {item.label}
             </Link>
           ))}

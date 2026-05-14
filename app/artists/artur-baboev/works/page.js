@@ -40,7 +40,11 @@ export default function ArturBaboevWorksPage() {
                 <img src={work.images[0]} alt={work.title} />
               </Link>
               <h3>{work.title}</h3>
-              <button type="button" onClick={() => setSelectedWorkId(work.id)}>
+              <button
+                type="button"
+                className="artist-work-enquire-btn"
+                onClick={() => setSelectedWorkId(work.id)}
+              >
                 Enquire
               </button>
             </article>
